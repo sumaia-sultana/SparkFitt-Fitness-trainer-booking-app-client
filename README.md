@@ -10,7 +10,8 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 ---
 ## 📸 Screenshots
 
-> _Add screenshots here to visually highlight the app (homepage, booking, dashboard, forum, etc.)_
+> ![admin-balance](https://github.com/user-attachments/assets/1a6339c1-4585-447e-b3a0-d03b0119d7c7)
+
 ---
 ## ⚙️ Features
 
