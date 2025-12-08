@@ -136,13 +136,13 @@ const PaymentForm = ( ) => {
       <button
         type="submit"
        disabled={alreadyBooked}
-        className={`px-4 py-2 rounded w-full text-white transition ${
+        className={`lg:px-4 p-0.5 py-2 rounded w-full text-white transition ${
             alreadyBooked
               ? 'bg-gray-400 cursor-not-allowed'
               : 'bg-[#064877] hover:bg-[#58829f]'
           }`}
         >
-          {alreadyBooked ? 'Already Booked' : 'Pay Now'}{selectedPackage.price}
+          {alreadyBooked ? 'Already Booked' : 'Pay Now'} ${selectedPackage.price}
       </button>
     </form>
   </div>

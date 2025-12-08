@@ -28,6 +28,8 @@ import BookingTrainer from "../Comoponent/Dashboard/pages/trainer/BookingTrainer
 import Payment from "../Comoponent/Dashboard/payment/Payment";
 import AppTrainerDetails from "../Comoponent/Dashboard/pages/admin/AppTrainerDetails";
 import Community from "../Comoponent/Nav/Community";
+import ForumDEtails from "../Pages/Home/ForumDEtails";
+import Statistics from "../Comoponent/Dashboard/pages/common/Statistics";
  
  
 
@@ -61,6 +63,10 @@ export const router = createBrowserRouter([
    element: <Community/>,
   },
   {
+   path: 'forums/:id',
+   element: <ForumDEtails/>,
+  },
+  {
    path: 'payment',
    element: <Payment/>,
   },
@@ -90,7 +96,7 @@ export const router = createBrowserRouter([
        index: true,
        element: (
         <PrivateRoute>
-          {/* <Statistics/> */}
+          <Statistics/>
         </PrivateRoute>
 
        ),
@@ -196,7 +202,7 @@ export const router = createBrowserRouter([
       {
         path: 'activity-log',
         element: (
-          <PrivateRoute allowedRole="member">
+          <PrivateRoute>
             <ActivityLog />
           </PrivateRoute>
         ),

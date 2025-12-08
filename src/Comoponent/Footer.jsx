@@ -27,7 +27,7 @@ const FooterComponent = () => {
       <div>
         <FooterBrand
           href="/"
-          src="/src/assets/spark-fit-logo.svg" // Your logo URL
+          src="https://i.ibb.co/ds1dKPKj/gym-logo.jpg" // Your logo URL
           alt="SparkFit Logo"
           name="SparkFit"
         />

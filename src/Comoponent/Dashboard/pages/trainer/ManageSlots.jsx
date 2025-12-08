@@ -77,14 +77,15 @@ const convertTo12HourFormat = (time24) => {
          axiosSecure.delete(`/slot/${_id}`, )
         .then(res => {
            if (res.data.deletedCount > 0) {
-             queryClient.setQueryData(['slot'], (oldData) =>
-            oldData.filter((s) => s._id !== _id)
-          );
-          Swal.fire({
+            Swal.fire({
             title: "Deleted!",
             text: "Slot has been removed from wishlist.",
             icon: "success"
           });
+             queryClient.setQueryData(['slot'], (oldData) =>
+            oldData.filter((s) => s._id !== _id)
+          );
+          
            } 
           
         })

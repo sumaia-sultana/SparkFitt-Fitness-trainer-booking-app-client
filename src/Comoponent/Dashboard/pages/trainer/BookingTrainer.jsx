@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 const BookingTrainer = () => {
   const { id } = useParams();
-  console.log({id});
+  // console.log({id});
   
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
@@ -18,7 +18,7 @@ const BookingTrainer = () => {
     queryKey: ['booking', id],
     queryFn: async () => {
       const res = await axiosSecure.get(`/booking-trainer/${id}`);
-      console.log('booking', data);
+      // console.log('booking', data);
       return res.data; 
     },
   });

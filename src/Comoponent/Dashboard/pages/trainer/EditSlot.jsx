@@ -3,25 +3,8 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { useLoaderData, useNavigate } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
-
-const convertTo24Hour = (time12h) => {
-  if (!time12h || typeof time12h !== 'string') return '';
-  const [time, modifier] = time12h.split(' ');
-  if (!time || !modifier) return time12h; // fallback
-
-  let [hours, minutes] = time.split(':');
-  hours = parseInt(hours, 10);
-
-  if (modifier.toUpperCase() === 'PM' && hours !== 12) {
-    hours += 12;
-  }
-  if (modifier.toUpperCase() === 'AM' && hours === 12) {
-    hours = 0;
-  }
-
-  return `${String(hours).padStart(2, '0')}:${minutes}`;
-};
-
+import { useQuery } from '@tanstack/react-query';
+import LoadSpinner from '../../../Shared/LoadSpinner';
  
 const EditSlot = () => {
   const axiosSecure = useAxiosSecure();
@@ -29,6 +12,15 @@ const EditSlot = () => {
   const {user} = useAuth()
   const [slot, setSlot] = useState(slotData);
   const navigate = useNavigate();
+
+  const { data: classes = [], isLoading, error } = useQuery({
+  queryKey: ['classes'],
+  queryFn: async () => {
+    const res = await axiosSecure.get('/classes');
+    return res.data.classes;
+  },
+});
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -51,8 +43,6 @@ const EditSlot = () => {
       const res = await axiosSecure.put(`/slots/${_id}`, updatedSlot);
       console.log(_id);
 
-
-      
       if (res.data.modifiedCount > 0) {
         Swal.fire('Updated!', 'Slot updated successfully.', 'success');
         navigate('/dashboard/manage-slots'); // or wherever you go after edit
@@ -65,152 +55,137 @@ const EditSlot = () => {
       Swal.fire('Error', 'Failed to update slot.', 'error');
     }
   };
-
+  if (isLoading) return <LoadSpinner />;
+  if (error) return <p>Error loading classes</p>;
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="bg-white shadow-lg p-6 rounded-xl space-y-4 max-w-xl mx-auto"
-    >
-      <h2 className="text-xl font-semibold text-gray-700">Edit Trainer Slot</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-  <input
-    type="text"
-    value={slot.trainerName}
-    readOnly
-    className="input input-bordered w-full bg-gray-100"
-    placeholder="Trainer Name"
-  />
-  <input
-    type="email"
-    value={slot.trainerEmail}
-    readOnly
-    className="input input-bordered w-full bg-gray-100"
-    placeholder="Trainer Email"/>
-     </div>
-     <input
-          type="text"
-          name="slot_name"
-          placeholder="Enter a name for your slot"
-          value={slot.slot_name}
-          onChange={handleChange}
-          className="input input-bordered w-full"
-        />
-
-        <input
-          type="date"
-          name="date"
-          value={slot.date}
-          onChange={handleChange}
-          className="input input-bordered w-full"
-          
-        />
-        <input
-          type="time"
-          name="startTime"
-         value={convertTo24Hour(slot.startTime)}
-
-          onChange={handleChange}
-          className="input input-bordered w-full"
-         
-        />
-        <input
-          type="time"
-          name="endTime"
-           value={convertTo24Hour(slot.endTime)}
-          onChange={handleChange}
-          className="input input-bordered w-full"
-           
-        />
-         
-            <select
-  name="sessionType"
-  value={slot.sessionType}
-  onChange={handleChange}
-  className="select select-bordered w-full"
-  required
+  <form
+  onSubmit={handleSubmit}
+  className="bg-white shadow-lg p-6 rounded-xl space-y-4 max-w-xl mx-auto"
 >
-  <option value="">Select Session Type</option>
-  <option>One-on-One</option>
-  <option>Group Class</option>
-  <option>Virtual</option>
-  <option>In-person</option>
-</select>
+  <h2 className="text-xl font-semibold text-gray-700">Edit Trainer Slot</h2>
 
-<select
-  name="packageType"
-  value={slot.packageType}
-  onChange={handleChange}
-  className="select select-bordered w-full"
-  required
->
-  <option value="">Select Package Type</option>
-  <option>Basic</option>
-  <option>Standard</option>
-  <option>Premium</option>
-</select>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div>
+      <label>Trainer Name</label>
+      <input type="text" value={slot.trainerName} readOnly />
+    </div>
+    <div>
+      <label>Trainer Email</label>
+      <input type="text" value={slot.trainerEmail} readOnly />
+    </div>
 
-        <input
-          type="text"
-          name="classType"
-          placeholder="Class Type (e.g., Yoga)"
-          value={slot.classType}
-          onChange={handleChange}
-          className="input input-bordered w-full"
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Location or Meeting Link"
-          defaultValue={slot.location}
-          onChange={handleChange}
-          className="input input-bordered w-full"
-        />
-        
-        <input
-          type="number"
-          name="maxParticipants"
-          placeholder="Max Participants"
-          value={slot.maxParticipants}
-          onChange={handleChange}
-          className="input input-bordered w-full"
-        />
-        <textarea
-          name="notes"
-          placeholder="Additional Notes"
-          value={slot.notes}
-          onChange={handleChange}
-          className="textarea textarea-bordered w-full md:col-span-2"
-        />
-        <label className="flex items-center gap-2 md:col-span-2">
-          <input
-            type="checkbox"
-            name="isRecurring"
-            checked={slot.isRecurring}
-            onChange={handleChange}
-            className="checkbox"
-          />
-          Repeat Weekly
-        </label>
-      </div>
+    <input
+      type="text"
+      name="slot_name"
+      placeholder="Slot Name"
+      value={slot.slot_name}
+      onChange={handleChange}
+      className="input input-bordered w-full"/>
 
-      <div className="flex gap-4 justify-end">
-        <button
-          type="button"
-          onClick={() => navigate(-1)}
-          className="btn px-2 rounded-md btn-sm bg-gray-300 text-black"
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          className="btn rounded-md px-2 py-2 bg-[#064877] text-white hover:bg-[#5f8aa8]"
-        >
-          Update Slot
-        </button>
-      </div>
-    </form>
+    <input
+      type="date"
+      name="date"
+      value={slot.date}
+      onChange={handleChange}
+      className="input input-bordered w-full" />
+
+    <div>
+      <label htmlFor="startTime" className="block mb-1 font-medium">Start Time</label>
+      <input
+        type="time"
+        id="startTime"
+        name="startTime"
+        value={slot.startTime}
+        onChange={handleChange}
+        className="input input-bordered w-full"/>
+    </div>
+
+    <div>
+      <label htmlFor="endTime" className="block mb-1 font-medium">End Time</label>
+      <input
+        type="time"
+        id="endTime"
+        name="endTime"
+        value={slot.endTime}
+        onChange={handleChange}
+        className="input input-bordered w-full"/>
+    </div>
+
+    <select
+      name="sessionType"
+      value={slot.sessionType}
+      onChange={handleChange}
+      className="select select-bordered w-full" >
+      <option value="">Select Session Type</option>
+      <option>One-on-One</option>
+      <option>Group Class</option>
+      <option>Virtual</option>
+      <option>In-person</option>
+    </select>
+
+    <select
+      name="classType"
+      value={slot.classType}
+      onChange={handleChange}
+      className="select select-bordered w-full">
+      <option value="">Select Class Type</option>
+      {classes.map((cls) => (
+        <option key={cls._id} value={cls.name}>{cls.name}</option>
+      ))}
+    </select>
+
+    <input
+      type="text"
+      name="location"
+      placeholder="Location or Meeting Link"
+      value={slot.location}
+      onChange={handleChange}
+      className="input input-bordered w-full" />
+
+    <select
+      name="packageType"
+      value={slot.packageType}
+      onChange={handleChange}
+      className="select select-bordered w-full">
+      <option value="">Select Package Type</option>
+      <option>Basic</option>
+      <option>Standard</option>
+      <option>Premium</option>
+    </select>
+
+    <input
+      type="number"
+      name="maxParticipants"
+      placeholder="Max Participants"
+      value={slot.maxParticipants}
+      onChange={handleChange}
+      className="input input-bordered w-full"/>
+
+    <textarea
+      name="notes"
+      placeholder="Additional Notes"
+      value={slot.notes}
+      onChange={handleChange}
+      className="textarea textarea-bordered w-full md:col-span-2"/>
+
+    <label className="flex items-center gap-2 md:col-span-2">
+      <input
+        type="checkbox"
+        name="isRecurring"
+        checked={slot.isRecurring}
+        onChange={handleChange}
+        className="checkbox"/>
+      Repeat Weekly
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    className="btn bg-[#064877] text-white hover:bg-[#5f8aa8] w-full">
+    Update Slot
+  </button>
+</form>
+
   );
 };
 

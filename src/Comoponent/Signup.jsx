@@ -8,7 +8,7 @@ import useAuth from './hooks/useAuth';
 import axios from 'axios';
 
 const Signup = () => {
-      const { createUser,saveUser, updateUserProfile, signInWithGoogle, loading } = useAuth()
+  const { createUser,saveUser, updateUserProfile, signInWithGoogle, loading } = useAuth()
   const navigate = useNavigate()
   // form submit handler
   const handleSubmit = async event => {

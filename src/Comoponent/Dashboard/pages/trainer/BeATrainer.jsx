@@ -112,8 +112,8 @@ const axiosSecure = useAxiosSecure();
         experience: formData.experience,
         status: 'pending',
       };
-    console.log('Trainer data sent:', trainer);
-    const response = await axiosSecure.patch('/users/apply-trainer', trainer);
+    // console.log('Trainer data sent:', trainer);
+    const response = await axiosSecure.patch('/apply-trainer', trainer);
 
 if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
   Swal.fire('Error', response.data.message || 'Update failed', 'error');

@@ -27,7 +27,7 @@ const AddNewSlot = ( ) => {
   });
 
   // Fetch classes from backend
-const { data: classes = [], isLoading, error } = useQuery({
+  const { data: classes = [], isLoading, error } = useQuery({
   queryKey: ['classes'],
   queryFn: async () => {
     const res = await axiosSecure.get('/classes');
@@ -84,12 +84,12 @@ const { data: classes = [], isLoading, error } = useQuery({
         <div>
   <label>Trainer Name</label>
   <input type="text" value={slot.trainerName} readOnly />
-</div>
-<div>
+  </div>
+  <div>
   <label>Trainer Email</label>
   <input type="text" value={slot.trainerEmail} readOnly />
 
-</div>
+    </div>
         <input
           type="text"
           name="slot_name"

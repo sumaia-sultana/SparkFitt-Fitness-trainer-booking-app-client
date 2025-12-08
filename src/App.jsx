@@ -7,7 +7,7 @@ function App() {
   return (
     <>
        
-      <h1>SparkFit</h1>
+     
        
        
     </>

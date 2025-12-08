@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import useAuth from '../../../hooks/useAuth';
+import { useNavigate } from 'react-router';
 
 const AddForum = () => {
     const axiosSecure = useAxiosSecure();
     const { user } = useAuth()
+    const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -37,6 +39,7 @@ const AddForum = () => {
       if (res.data.insertedId) {
         Swal.fire('Success', 'Forum created successfully!', 'success');
         setFormData({ title: '', content: '' });
+        navigate("/community")
       }
     } catch (error) {
       console.error(error);

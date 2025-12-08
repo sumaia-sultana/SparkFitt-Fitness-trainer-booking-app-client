@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {   useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
@@ -6,13 +6,14 @@ import LoadSpinner from '../../../Shared/LoadSpinner';
 import { useQuery } from '@tanstack/react-query';
 
 const Profile = () => {
-     const { user, loading } = useAuth();
+     const { user, updateUser,loading } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [saving, setSaving] = useState(false);
   const [name, setName] = useState('');
   const [photoURL, setPhotoURL] = useState('');
   const [file, setFile] = useState(null);
- 
+   
+
 
   // Fetch user profile info from backend
   const { data: userInfo = {}, isPending, refetch } = useQuery({
@@ -39,27 +40,47 @@ const Profile = () => {
     }
   };
 
-  const handleSave = async () => {
-    setSaving(true);
-    try {
-      let uploadedPhotoURL = photoURL;
- 
+  const handleSave = async (e) => {
+  e.preventDefault();
+  setSaving(true);
 
-      // Update in your backend database
-      await axiosSecure.patch(`/users/${user.email}`, {
-        name,
-        photo: uploadedPhotoURL,
-      });
+  let uploadedPhotoURL = photoURL;
 
-      Swal.fire('Success', 'Profile updated successfully!', 'success');
-      refetch();
-    } catch (err) {
-      console.error(err);
-      Swal.fire('Error', 'Failed to update profile', 'error');
-    } finally {
-      setSaving(false);
+  try {
+    // If user selected a new file, upload it first
+    if (file) {
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const { data } = await axiosSecure.post(
+        `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_IMGBB_KEY}`,
+        formData
+      );
+      uploadedPhotoURL = data?.data?.url;
     }
-  };
+
+    // Update Firebase Auth profile
+    await updateUser({
+      name,
+      photo: uploadedPhotoURL,
+      email: user.email,
+    });
+
+    // Update backend database
+    await axiosSecure.patch(`/update/${user.email}`, {
+      name,
+      photo: uploadedPhotoURL,
+    });
+
+    Swal.fire('Success', 'Profile updated successfully!', 'success');
+    refetch();
+  } catch (err) {
+    console.error(err);
+    Swal.fire('Error', 'Failed to update profile', 'error');
+  } finally {
+    setSaving(false);
+  }
+};
 
   if (loading && isPending || !user ) return <LoadSpinner />;
 

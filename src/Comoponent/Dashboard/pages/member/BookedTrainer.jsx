@@ -41,17 +41,16 @@ const BookedTrainer = () => {
     }
     setSubmitting(true);
     try {
-      const reviewData = {
-        trainerId: selectedTrainer.trainerId || selectedTrainer._id,
-        trainerName: selectedTrainer.trainerName,
+       const reviewData = {
+        trainerName: selectedTrainer.trainerName, // ✅ Use name instead of email/id
         userName: user.displayName,
         userEmail: user.email,
         feedback,
         rating,
-        createdAt: new Date(),
-      };
+        date: new Date()// Match backend's expected "date" field
+    };
 
-      await axiosSecure.post('/reviews', reviewData);
+        await axiosSecure.post('/reviews', reviewData);
 
       Swal.fire('Thank you!', 'Your review has been submitted.', 'success');
       setIsReviewOpen(false);
@@ -67,17 +66,20 @@ const BookedTrainer = () => {
   if (isError) return <div>Error loading bookings.</div>;
 
   if (bookedTrainers.length === 0) {
-    return <div className="text-center p-10">No bookings yet.</div>;
+    return <div className="text-center  p-10">
+    <h1 className='text-red-500 text-xl font-mono font-semibold'>No bookings yet!</h1>
+    <p className='text-[#064877] font-bold font-mono text-2xl'>Make your first book now!!</p>
+    </div>;
   }
 
     return (
-         <div className="p-6">
+         <div className="lg:p-6">
       <h2 className="text-xl font-bold mb-4">Your Booked Trainers</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {bookedTrainers.map((booking) => (
           <div
             key={booking._id}
-            className="border rounded p-4 shadow hover:shadow-md transition">
+            className="border rounded lg:p-4 p-3 shadow hover:shadow-md transition">
             <h3 className="font-semibold text-lg mb-1">{booking.trainerName}</h3>
             <p><strong>Slot:</strong> {booking.slotName}</p>
             <p><strong>Package:</strong> {booking.packageName}</p>

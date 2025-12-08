@@ -3,6 +3,7 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import LoadSpinner from '../../../Shared/LoadSpinner';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import HelmetTitle from '../../../HelmetTitle';
 
 const Balance = () => {
     const axiosSecure = useAxiosSecure();
@@ -11,7 +12,7 @@ const Balance = () => {
   const { data: payments = [], isLoading: paymentsLoading } = useQuery({
     queryKey: ['payments'],
     queryFn: async () => {
-      const res = await axiosSecure.get('/payments');
+      const res = await axiosSecure.get(`/payments `);
       return res.data;
     },
   });
@@ -35,13 +36,15 @@ const Balance = () => {
 
   // Prepare chart data
   const chartData = [
-    { name: 'Subscribers', value: stats.totalSubscribers || 0 },
-    { name: 'Paid Members', value: stats.totalPaidMembers || 0 }
+    { name: 'Subscribers', value: stats?.totalSubscribers || 0 },
+    { name: 'Paid Members', value: stats?.totalPaidMembers || 0 }
   ];
 
   const COLORS = ['#8884d8', '#82ca9d'];
 
     return (
+        <>
+        <HelmetTitle title="Balance" />
         <div className="p-6 space-y-6">
       <h2 className="text-2xl font-semibold">💰 Admin Balance Overview</h2>
 
@@ -119,6 +122,7 @@ const Balance = () => {
         </div>
       </div>
     </div>
+        </>
     );
 };
 

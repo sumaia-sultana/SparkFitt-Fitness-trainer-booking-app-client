@@ -18,9 +18,12 @@ const Navbarr = () => {
   const { user, logOut } = useAuth();
 
   return (
-    <Navbar fluid rounded>
+    <Navbar fluid
+      rounded
+      className="sticky top-0 z-50 bg-white shadow-md border-b border-gray-200"
+    >
       <NavbarBrand as={Link} to="/">
-         <img src="/src/assets/spark-fit-logo.svg" className="mr-3 h-8 w-8 rounded-full" alt="SparkFit Logo" />
+         <img src="https://i.ibb.co/ds1dKPKj/gym-logo.jpg" className="mr-3 h-8 w-8 rounded-full" alt="SparkFit Logo" />
         <span className="self-center whitespace-nowrap text-[#064877] text-2xl font-bold">SparkFit</span>
       </NavbarBrand>
 
@@ -33,15 +36,13 @@ const Navbarr = () => {
               <Avatar
                 alt="User profile"
                 img={user.photoURL}
-                rounded
-              />
-            }
-          >
+                rounded/>
+            }>
             <DropdownHeader>
               <span className="block text-sm">{user.displayName}</span>
               <span className="block truncate text-sm font-medium">{user.email}</span>
             </DropdownHeader>        
-            <DropdownItem as={Link} to="/profile">Profile</DropdownItem>
+            <DropdownItem as={Link} to="/dashboard/profile">Profile</DropdownItem>
             <DropdownDivider />
             <DropdownItem onClick={logOut}>Logout</DropdownItem>
           </Dropdown>

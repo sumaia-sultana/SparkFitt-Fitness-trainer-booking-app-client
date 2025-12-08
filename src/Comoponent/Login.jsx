@@ -5,6 +5,7 @@ import useAuth from './hooks/useAuth';
 import LoadSpinner from './Shared/LoadSpinner';
 import { TbFidgetSpinner } from 'react-icons/tb';
 import { FcGoogle } from 'react-icons/fc';
+import HelmetTitle from './HelmetTitle';
 
 const Login = () => {
      const { signIn, signInWithGoogle, loading, user } = useAuth()
@@ -45,8 +46,11 @@ const Login = () => {
     }
   }
     return (
+      <>
+      <HelmetTitle title="Log in" />
          <div className='flex justify-center items-center min-h-screen bg-white'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+         
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
           <p className='text-sm text-gray-400'>
@@ -57,8 +61,7 @@ const Login = () => {
           onSubmit={handleSubmit}
           noValidate=''
           action=''
-          className='space-y-6 ng-untouched ng-pristine ng-valid'
-        >
+          className='space-y-6 ng-untouched ng-pristine ng-valid'>
           <div className='space-y-4'>
             <div>
               <label htmlFor='email' className='block mb-2 text-sm'>
@@ -119,8 +122,7 @@ const Login = () => {
         </div>
         <div
           onClick={handleGoogleSignIn}
-          className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'
-        >
+          className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>
@@ -129,14 +131,14 @@ const Login = () => {
           Don&apos;t have an account yet?{' '}
           <Link
             to='/signup'
-            className='hover:underline hover:text-[#2596be] text-gray-600'
-          >
+            className='hover:underline hover:text-[#2596be] text-gray-600'>
             Sign up
           </Link>
           .
         </p>
       </div>
     </div>
+      </>
     );
 };
 
