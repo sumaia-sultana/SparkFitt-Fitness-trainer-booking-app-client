@@ -64,7 +64,7 @@ const AddClass = () => {
 
   return (
     <div className="max-w-xl mx-auto p-6 bg-white shadow rounded">
-      <h2 className="text-2xl font-bold mb-4 text-[#064877] text-center">Add New Class</h2>
+      <h2 className="text-2xl font-bold mb-4 text-[#3624bf] text-center">Add New Class</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -94,7 +94,7 @@ const AddClass = () => {
         <button
           type="submit"
           disabled={loading}
-          className="bg-[#064877] text-white px-4 py-2 rounded hover:bg-[#5f8cad]"
+          className="bg-[#3624bf] text-white px-4 py-2 rounded hover:bg-[#5f8cad]"
         >
           {loading ? 'Uploading...' : 'Add Class'}
         </button>

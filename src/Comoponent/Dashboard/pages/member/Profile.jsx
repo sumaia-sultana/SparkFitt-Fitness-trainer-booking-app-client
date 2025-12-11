@@ -85,16 +85,16 @@ const Profile = () => {
   if (loading && isPending || !user ) return <LoadSpinner />;
 
     return (
-        <div className="max-w-2xl mx-auto mt-8 p-6 rounded-2xl shadow-lg bg-white space-y-6">
+        <div className="max-w-2xl mx-auto mt-8 p-6 rounded-2xl shadow-lg space-y-6">
       <h2 className="text-2xl font-bold text-center">Your Profile</h2>
 
       <div className="flex items-center gap-4">
         <img
           src={file ? URL.createObjectURL(file) : photoURL || '/default-avatar.png'}
           alt="Profile"
-          className="w-24 h-28 rounded-full object-cover "
+          className="w-26 h-28  rounded-full object-cover "
         />
-        <input type="file" accept="image/*" onChange={handleFileChange} />
+        <input className='border border-gray-50 p-3 rounded-md' type="file" accept="image/*" onChange={handleFileChange} />
       </div>
 
       <div>
@@ -113,7 +113,7 @@ const Profile = () => {
           type="text"
           value={user.email}
           readOnly
-          className="w-full border bg-gray-100 rounded-lg px-3 py-2 cursor-not-allowed"/>
+          className="w-full border  rounded-lg px-3 py-2 cursor-not-allowed"/>
       </div>
 
       <div>
@@ -122,14 +122,14 @@ const Profile = () => {
           type="text"
           value={new Date(user.metadata.lastSignInTime).toLocaleString()}
           readOnly
-          className="w-full border bg-gray-100 rounded-lg px-3 py-2"
+          className="w-full border   rounded-lg px-3 py-2"
         />
       </div>
 
       <button
         onClick={handleSave}
         disabled={saving}
-        className="w-full bg-[#064877] text-white py-2 rounded-lg hover:bg-[#6b9dc1] transition">
+        className="w-full bg-[#3624bf] text-white py-2 rounded-lg hover:bg-[#6b9dc1] transition">
         {saving ? 'Saving...' : 'Save Changes'}
       </button>
     </div>

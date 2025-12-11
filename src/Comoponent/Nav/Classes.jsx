@@ -70,7 +70,7 @@ import HelmetTitle from '../HelmetTitle';
       <>
         <div className="items-center gap-4 mb-4">
           <img src={selectedClass.image} alt={selectedClass.name} className="w-full h-[360px] rounded object-cover" />
-          <h2 className="text-3xl font-bold text-[#064877] mt-4">{selectedClass.name}</h2>
+          <h2 className="text-3xl font-bold text-[#3624bf] mt-4">{selectedClass.name}</h2>
         </div>
 
         {/* Tabs */}
@@ -81,7 +81,7 @@ import HelmetTitle from '../HelmetTitle';
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2 rounded ${
                     activeTab === tab
-                      ? 'bg-[#064877] text-white'
+                      ? 'bg-[#3624bf] text-white'
                       : 'bg-gray-200'
                   }`}
                 >
@@ -129,7 +129,7 @@ import HelmetTitle from '../HelmetTitle';
                       className="w-24 h-28 object-cover rounded-md"
                     />
                     <div className="ml-2">
-                      <h3 className="text-xl font-semibold text-[#064877]">
+                      <h3 className="text-xl font-semibold text-[#3624bf]">
                         {trainer.name}
                       </h3>
                       <p className="text-sm text-gray-500">{trainer.email}</p>
@@ -139,9 +139,9 @@ import HelmetTitle from '../HelmetTitle';
                         </p>
                       )}
                       <div className="mt-2">
-                        <button className="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-[#064877] text-white">
-                          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#064877] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
-                          <span className="relative text-[#064877] transition duration-300 group-hover:text-white ease">
+                        <button className="rounded-md px-3.5 py-2 m-1 overflow-hidden relative group cursor-pointer border-2 font-medium border-[#3624bf] text-white">
+                          <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#3624bf] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+                          <span className="relative text-[#3624bf] transition duration-300 group-hover:text-white ease">
                             <Link to={`/trainer-details/${trainer._id}`}>
                               View Details
                             </Link>
@@ -170,7 +170,7 @@ import HelmetTitle from '../HelmetTitle';
                 alt="gym trainer"
               />
             </div>
-            <h1 className="text-2xl text-[#064877] font-bold">
+            <h1 className="text-2xl text-[#3624bf] font-bold">
               Our Best Trainers are always here to help you!
             </h1>
             <p className="mt-2 text-gray-600 font-semibold text-sm">
@@ -198,7 +198,7 @@ import HelmetTitle from '../HelmetTitle';
             <li key={cls._id}>
               <button
                 onClick={() => handleClassSelect(cls)}
-                className="w-full text-left px-5 font-semibold shadow-sm border border-gray-100 text-[#064877] py-2 bg-white rounded hover:bg-gray-200"
+                className="w-full text-left px-5 font-semibold shadow-sm border border-gray-100 text-[#3624bf] py-2 bg-white rounded hover:bg-gray-200"
               >
                 {cls.name}
               </button>
@@ -215,7 +215,7 @@ import HelmetTitle from '../HelmetTitle';
                 onClick={() => setClassPage(i + 1)}
                 className={`px-3 py-1 rounded ${
                   classPage === i + 1
-                    ? 'bg-[#064877] text-white'
+                    ? 'bg-[#3624bf] text-white'
                     : 'bg-gray-300'
                 }`}
               >

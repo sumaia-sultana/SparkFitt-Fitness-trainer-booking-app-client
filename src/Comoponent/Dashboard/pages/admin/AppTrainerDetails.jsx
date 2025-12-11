@@ -64,27 +64,27 @@ const AppTrainerDetails = () => {
 
     return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-  <h2 className="text-2xl font-bold text-[#064877] mb-6">Trainer Application Details</h2>
+  <h2 className="text-2xl font-bold text-[#3624bf] mb-6">Trainer Application Details</h2>
 
-  <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
+  <div className=" rounded-xl shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
     {/* Trainer Photo */}
     <div className="flex-shrink-0">
       <img
         src={trainer.photo || 'https://via.placeholder.com/100'}
         alt={trainer.name}
-        className="w-32 h-32 rounded-full object-cover border-2 border-gray-300"
+        className="w-32 h-32 rounded-full object-cover border-2  "
       />
     </div>
 
     {/* Trainer Info */}
     <div className="flex-1 w-full">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-xl font-semibold text-gray-800">{trainer.name}</h3>
+        <h3 className="text-xl font-semibold  ">{trainer.name}</h3>
         <span className="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">
           {trainer.status || 'Pending'}
         </span>
       </div>
-      <div className="text-gray-700 space-y-2">
+      <div className=" space-y-2">
         <p><span className="font-semibold">Email:</span> {trainer.email}</p>
         <p><span className="font-semibold">Age:</span> {trainer.age}</p>
         <p><span className="font-semibold">Skills:</span> {trainer.skills?.join(', ') || 'N/A'}</p>
@@ -95,7 +95,7 @@ const AppTrainerDetails = () => {
       {/* Action Buttons */}
       
      <div className="flex gap-3">
-     <button onClick={() => handleApprove(trainer._id)} className="btn bg-[#064877] text-white py-1.5 px-2 rounded-md hover:bg-[#58829f]">
+     <button onClick={() => handleApprove(trainer._id)} className="btn bg-[#3624bf] text-white py-1.5 px-2 rounded-md hover:bg-[#58829f]">
         Approved
      </button>
      <button onClick={() => handleReject(trainer)} className="bg-red-700 hover:bg-red-400 btn text-white py-1 px-5 rounded-md">

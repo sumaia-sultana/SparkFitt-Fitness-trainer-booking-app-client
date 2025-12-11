@@ -91,7 +91,7 @@ const BookingTrainer = () => {
     <div className="max-w-4xl mx-auto p-6">
       <h2 className="text-3xl font-bold mb-4 text-center">Trainer Booking</h2>
 
-      <div className="bg-white shadow p-4 rounded mb-6 space-y-2">
+      <div className=" shadow p-4 rounded mb-6 space-y-2">
         <h1 className='text-xl ' >{slot_name} </h1>
         <p><strong>Trainer Name:</strong> {trainerName}</p>
         <p><strong>Date:</strong> {date}</p>
@@ -107,7 +107,7 @@ const BookingTrainer = () => {
       </div>
 
       {classInfo && (
-        <div className="bg-white shadow p-4 rounded mb-6">
+        <div className="  shadow p-4 rounded mb-6">
           <h3 className="text-2xl font-semibold mb-2">Class Information</h3>
           <img src={classInfo.image} alt={classInfo.name} className="w-full h-64 object-cover rounded mb-4" />
           <p><strong>Class Name:</strong> {classInfo.name}</p>
@@ -128,7 +128,7 @@ const BookingTrainer = () => {
               </ul>
               <p className="text-lg font-semibold mb-3">Price: ${pkg.price}</p>
              <button
-  className="bg-[#064877] text-white px-4 py-2 rounded hover:bg-[#58829f] w-full"
+  className="bg-[#3624bf] text-white px-4 py-2 rounded hover:bg-[#58829f] w-full"
   onClick={() => {
     if (user?.email === data?.trainerEmail) {
       Swal.fire({

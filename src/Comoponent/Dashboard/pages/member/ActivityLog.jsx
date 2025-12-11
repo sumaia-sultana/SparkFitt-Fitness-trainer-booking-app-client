@@ -142,7 +142,7 @@ const ActivityLog = () => {
     <div className='text-center  pt-10'>
     <button
       onClick={closeModal}
-      className="px-4 py-2 bg-[#064877] text-white rounded-md hover:bg-[#6cb0e0]">
+      className="px-4 py-2 bg- [#3624bf] text-white rounded-md hover:bg-[#6cb0e0]">
       Close
     </button>
   </div>

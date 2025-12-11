@@ -75,10 +75,10 @@ const AddNewSlot = ( ) => {
   if (error) return <p>Error loading classes</p>;
 
     return (
-        <form
+      <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-lg p-6 rounded-xl space-y-4 max-w-xl mx-auto">
-      <h2 className="text-xl font-semibold text-gray-700">Create Trainer Slot</h2>
+      className="shadow-lg  border border-gray-400 p-6 rounded-xl space-y-4 max-w-xl mx-auto">
+      <h2 className="text-xl font-semibold">Create Trainer Slot</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
@@ -206,7 +206,7 @@ const AddNewSlot = ( ) => {
 
       <button
         type="submit"
-        className="btn bg-[#064877] text-white hover:bg-[#5f8aa8] w-full"
+        className="btn bg-[#3624bf] text-white hover:bg-[#5f8aa8] w-full"
       >
         Create Slot
       </button>

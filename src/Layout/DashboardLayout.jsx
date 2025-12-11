@@ -6,15 +6,19 @@ import LoadSpinner from '../Comoponent/Shared/LoadSpinner';
  import { AiOutlineMenuFold } from "react-icons/ai";
 import useRole from '../Comoponent/hooks/useRole';
 import HelmetTitle from '../Comoponent/HelmetTitle';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import useAxiosSecure from '../Comoponent/hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import { ThemeContext } from '../Provider/AuthProvider';
+import { FaMoon } from 'react-icons/fa6';
+import { FiSun } from 'react-icons/fi';
  
 
 const DashboardLayout = () => {
      const {user  } = useAuth()     
      const {status } = useRole()
      const axiosSecure = useAxiosSecure();
+     const {darkMode, setDarkmode} = useContext(ThemeContext);
      const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
      
@@ -42,16 +46,16 @@ if (role === 'admin') {
 ) {
   dashboardTitle = 'Member Dashboard';
 }
-
-
     
-     return (
+    return (
     <>
     <HelmetTitle title="Dashboard" />
-     <div className="flex min-h-screen">
+     <div className=' '>
+      <div className="flex min-h-screen">
+        
       {!isSidebarOpen && (
     <button
-      className="lg:hidden fixed top-4 left-4 z-50 bg-blue-900 text-white p-2 rounded-md"
+      className="lg:hidden fixed top-4 left-4 bg-[#3624bf] text-white p-2 rounded-md"
       onClick={() => setIsSidebarOpen(true)}>
       <AiOutlineMenuFold />
     </button>
@@ -59,7 +63,7 @@ if (role === 'admin') {
 
   {/* Sidebar for mobile */}
   <div
-    className={`fixed inset-y-0 left-0 z-40 w-64 bg-blue-900 text-white transform ${
+    className={`fixed top-0 h-full left-0  w-64  bg-[#3624bf] text-white transform ${
       isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
     } transition-transform duration-300 ease-in-out lg:hidden`}
   >
@@ -70,21 +74,34 @@ if (role === 'admin') {
       >
         ×
       </button>
+         
     </div>
     <Sidebar />
   </div>
 
         {/* Sidebar for desktop */}
-        <aside className="hidden lg:block w-64 bg-blue-900 text-white">
+        <aside className="hidden lg:block w-72 text-white">
           <Sidebar />
         </aside>
-
         {/* Main content area */}
-        <main className="flex-1 p-4 bg-gray-50">
-          <h2 className="lg:text-2xl  px-10 lg:px-2 font-bold mb-4">{dashboardTitle}</h2>
+        <main className="flex-1 p-4  ">
+         <div className='flex px-10 lg:px-2 justify-between'>
+           <h2 className="lg:text-2xl  font-bold mb-4">{dashboardTitle}</h2>
+          {/* DARK MODE BUTTON */}
+                <button
+                  className="px-3 text-yellow-300"
+                  onClick={() => setDarkmode((m) => !m)}
+                >
+                  {darkMode ? <FiSun size={20} /> : <FaMoon size={20} />}
+                </button>
+         </div>
           <Outlet />
+
+              
         </main>
       </div>
+
+     </div>
     </>
     );
 };

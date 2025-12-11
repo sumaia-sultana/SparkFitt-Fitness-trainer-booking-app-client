@@ -30,9 +30,6 @@ import AppTrainerDetails from "../Comoponent/Dashboard/pages/admin/AppTrainerDet
 import Community from "../Comoponent/Nav/Community";
 import ForumDEtails from "../Pages/Home/ForumDEtails";
 import Statistics from "../Comoponent/Dashboard/pages/common/Statistics";
- 
- 
-
 
 export const router = createBrowserRouter([
   {

@@ -12,7 +12,16 @@ const Community = ( ) => {
  const axiosSecure = useAxiosSecure(); // if you're using secure instance
    
   const {user} = useAuth()
-
+    
+    const formatedDate = (isoDate) => {
+      if (!isoDate) return "" ;
+        const dateObj = new Date(isoDate);
+        const day = dateObj.getDate();
+        const month = dateObj.toLocaleString("default", {month: "short"});
+        const year = dateObj.getFullYear();
+        return `${day} ${month} ${year}`
+    }
+    
     const { data: forums = [], isLoading, refetch } = useQuery({
     queryKey: ['forums'],
     queryFn: async () => {
@@ -28,7 +37,7 @@ const Community = ( ) => {
 
   try {
     const res = await axiosSecure.patch(`/forums/${forumId}/${type}`, {
-      email: user.email,
+    email: user.email,
       
       
     });
@@ -43,28 +52,27 @@ const Community = ( ) => {
   }
 };
 
-
   if (isLoading) return <LoadSpinner />;
 
     return (
     <>
-  
           <div className="max-w-5xl mx-auto px-4 py-6">
-      <h2 className="text-2xl font-bold mb-4 text-[#064877]">Community Forums</h2>
+      <h2 className="text-2xl font-bold mb-4 text-">Community Forums</h2>
       
       {forums.length === 0 ? (
         <p>No forum posts found.</p>
       ) : (
         <div className="space-y-4">
           {forums.map((post) => (
-  <div key={post._id} className="bg-white p-4 shadow-md rounded-md">
+  <div key={post._id} className="p-4 shadow-2xl hover:shadow-[#3624bf] rounded-2xl">
     <div>
-      <h3 className="text-xl font-semibold text-[#333]">{post.title}</h3>
+      <h3 className="text-xl font-semibold">{post.title}</h3>
       
     </div>
-    <p className="text-gray-700 mt-2 whitespace-pre-line">{post.content}</p>
+    <p className="mt-2 whitespace-pre-line">{post.content}</p>
     <div className="mt-3 text-sm text-gray-500">
-      Posted by <span className="font-medium">{post?.name || post.email}</span> | {new Date(post.createdAt).toLocaleDateString()}
+      Posted by <span className="font-medium">{post?.name  }
+        </span> | {formatedDate(post.createdAt) }
     </div>
    {post?.role === "admin" && (
   <span className="flex items-center gap-1 text-xs text-white px-2 py-0.5 rounded-full">

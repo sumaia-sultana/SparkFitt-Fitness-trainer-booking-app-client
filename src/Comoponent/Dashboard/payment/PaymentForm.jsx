@@ -18,8 +18,8 @@ const PaymentForm = ( ) => {
     const params = new URLSearchParams(location.search);
   const axiosSecure = useAxiosSecure();
   const { booking, selectedPackage } = location.state || {};
-   const packageType = params.get('packageType'); // e.g., "Premium"
-  const trainerName = params.get('trainer');     // e.g., "Ayesha"
+   const packageType = params.get('packageType');  
+  const trainerName = params.get('trainer');  
   const slotId = params.get('slotId');
   console.log(packageType, trainerName, slotId);
   
@@ -64,7 +64,7 @@ const PaymentForm = ( ) => {
         try {
       // Step 1: Create payment intent
       const { data } = await axiosSecure.post('/create-payment-intent', {
-        amountInCents: selectedPackage.price * 100 // Convert to cents
+        amountInCents: selectedPackage.price * 100  
       });
 
       const clientSecret = data.clientSecret;
@@ -121,7 +121,7 @@ const PaymentForm = ( ) => {
    
    return (
   <div className="max-w-lg mx-auto space-y-6">
-    <div className="bg-gray-100 p-4 rounded shadow">
+    <div className=" p-4 rounded shadow">
       <h3 className="text-lg font-semibold mb-2">Payment Details</h3>
       <p><strong>Trainer:</strong> {booking.trainerName}</p>
       <p><strong>Slot:</strong> {booking.slot_name}</p>
@@ -132,14 +132,14 @@ const PaymentForm = ( ) => {
     </div>
 
     <form onSubmit={handleSubmit}>
-      <CardElement className="py-10 px-4 border border-gray-300 rounded" />
+      <CardElement className="py-6 px-4 border border-gray-300 text-[#3624bf] rounded-lg" />
       <button
         type="submit"
        disabled={alreadyBooked}
-        className={`lg:px-4 p-0.5 py-2 rounded w-full text-white transition ${
+        className={`lg:px-4 p-0.5 py-2 rounded w-full transition ${
             alreadyBooked
               ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-[#064877] hover:bg-[#58829f]'
+              : 'bg-[#3624bf] text-white hover:bg-[#58829f]'
           }`}
         >
           {alreadyBooked ? 'Already Booked' : 'Pay Now'} ${selectedPackage.price}

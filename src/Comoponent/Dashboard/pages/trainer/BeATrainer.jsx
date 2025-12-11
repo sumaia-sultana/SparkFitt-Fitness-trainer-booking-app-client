@@ -60,12 +60,12 @@ const axiosSecure = useAxiosSecure();
 
   const skillOptions = [
     'Yoga', 'Zumba',
-    'LISS(Cardio, Endurance, pacing,light cycling, breathing control)',
-    'HIIT(Cardio,Power-lifting, endurance, speed, timing)',
-    'Endurance(Marathon, cycling, long-distance training)',
+    'LISS-Cardio,cycling',
+    'Power-lifting',
+    'Endurance-Marathon',
     'Group Fitness',
-    'MICT (Cardio, Jogging, steady cycling)',
-    'Pilates(Core Strength, Flexibility, Balance)',
+    'MICT ',
+    'Pilates-Balance',
     'Weightlifting'
   ];
 
@@ -153,9 +153,9 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
 
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow">
-      <h2 className="text-2xl font-bold mb-6 text-[#064877]">Apply to Become a Trainer</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="max-w-3xl mx-auto p-6  rounded-lg shadow">
+      <h2 className="text-2xl font-bold mb-6 text- [#3624bf]">Apply to Become a Trainer</h2>
+      <form onSubmit={handleSubmit} className="space-y-4 border border-gray-50 p-3.5 rounded-3xl">
 
         {/* Full Name */}
         <div>
@@ -176,7 +176,7 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
             type="email"
             value={user?.email}
             readOnly
-            className="input  px-5 py-2 border rounded-sm border-gray-200 input-bordered w-full bg-gray-100"
+            className="input  px-5 py-2 border rounded-sm border-gray-200 input-bordered w-full  "
           />
         </div>
 
@@ -244,7 +244,7 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
         {/* Available Time */}
         <div className="flex gap-4 items-center">
   <div>
-    <label className="block text-sm font-medium text-gray-700">Start Time</label>
+    <label className="block text-sm font-medium ">Start Time</label>
     <input
       type="time"
       value={startTime}
@@ -254,7 +254,7 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
     />
   </div>
   <div>
-    <label className="block text-sm font-medium text-gray-700">End Time</label>
+    <label className="block text-sm font-medium ">End Time</label>
     <input
       type="time"
       value={endTime}
@@ -264,8 +264,6 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
     />
   </div>
 </div>
-
-
         {/* Additional Info */}
         <div>
           <label className="font-medium">Experience</label>
@@ -280,7 +278,7 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
         {/* Submit */}
         <button
           type="submit"
-          className="btn py-3 rounded-sm bg-[#064877] text-white font-semibold w-full hover:bg-[#4f738b]"
+          className="btn py-3 rounded-sm bg- [#3624bf] text-white font-semibold w-full hover:bg-[#4f738b]"
           disabled={submitting}
         >
           {submitting ? 'Submitting...' : 'Apply'}

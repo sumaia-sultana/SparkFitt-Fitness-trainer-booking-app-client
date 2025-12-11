@@ -46,7 +46,7 @@ const ForumDEtails = () => {
 
     return (
          <div className="px-4 md:px-10 py-6">
-      <h1 className="text-3xl font-bold text-[#064877] mb-4">{post.title}</h1>
+      <h1 className="text-3xl font-bold text-[#3624bf] mb-4">{post.title}</h1>
       <p className="text-gray-700 leading-relaxed">{post.content ||  ''}</p>
       <div className="flex items-center gap-6 mt-6 text-gray-700">
         {/* Upvote */}

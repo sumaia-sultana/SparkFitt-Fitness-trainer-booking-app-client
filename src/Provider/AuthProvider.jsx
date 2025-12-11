@@ -1,20 +1,16 @@
 import React, { createContext, useEffect, useState } from 'react';
 import {
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-  signOut,
-  updateEmail,
-  updateProfile,
-} from 'firebase/auth'
+  GoogleAuthProvider,createUserWithEmailAndPassword,
+  getAuth, onAuthStateChanged,
+  signInWithEmailAndPassword,signInWithPopup,signOut,
+  updateEmail,updateProfile} from 'firebase/auth'
 import { app } from '../Firebase/firebase.init';
 import axios from 'axios';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext(null)
+
+ const ThemeContext = createContext();
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
 
@@ -128,10 +124,11 @@ useEffect(() => {
     updateUser,
     
   }
-
+  
+  
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };
-
+export {ThemeContext};
 export default AuthProvider;

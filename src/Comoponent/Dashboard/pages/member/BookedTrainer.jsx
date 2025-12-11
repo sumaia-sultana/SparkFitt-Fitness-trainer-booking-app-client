@@ -68,7 +68,7 @@ const BookedTrainer = () => {
   if (bookedTrainers.length === 0) {
     return <div className="text-center  p-10">
     <h1 className='text-red-500 text-xl font-mono font-semibold'>No bookings yet!</h1>
-    <p className='text-[#064877] font-bold font-mono text-2xl'>Make your first book now!!</p>
+    <p className='text-[#3624bf] font-bold font-mono text-2xl'>Make your first book now!!</p>
     </div>;
   }
 
@@ -88,7 +88,7 @@ const BookedTrainer = () => {
            
             <button
               onClick={() => handleReviewOpen(booking)}
-              className="mt-4 bg-[#064877] text-white px-4 py-2 rounded hover:bg-[#064877]">
+              className="mt-4 bg-[#3624bf] text-white px-4 py-2 rounded hover:bg-[#3624bf]">
               Review
             </button>
           </div>
@@ -132,7 +132,7 @@ const BookedTrainer = () => {
           <button
             type="submit"
             disabled={submitting}
-            className="px-4 py-2 rounded bg-[#064877] text-white hover:bg-[#6c9ec2] text-sm"
+            className="px-4 py-2 rounded bg-[#3624bf] text-white hover:bg-[#6c9ec2] text-sm"
           >
             {submitting ? 'Submitting...' : 'Submit Review'}
           </button>

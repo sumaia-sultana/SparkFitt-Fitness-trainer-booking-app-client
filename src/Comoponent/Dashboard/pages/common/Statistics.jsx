@@ -44,7 +44,7 @@ const data = [
         {/* Stat Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
          {/* Members */}
-        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
+        <div className=" rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="bg-purple-100 text-purple-600 p-3 rounded-full text-xl">
@@ -53,7 +53,7 @@ const data = [
               <h3 className="font-semibold text-gray-600">Total Members</h3>
             </div>
           </div>
-          <p className="text-3xl font-bold text-gray-900">{stats?.totalMembers || 0}</p>
+          <p className="text-3xl font-bold ">{stats?.totalMembers || 0}</p>
           <div className="flex items-center gap-2 text-green-600 text-sm">
             <IoTrendingUp />
             <span>4.21%</span>
@@ -62,7 +62,7 @@ const data = [
         </div>
 
         {/* Subscribers */}
-        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
+        <div className=" rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="bg-pink-100 text-pink-600 p-3 rounded-full text-xl">
@@ -71,7 +71,7 @@ const data = [
               <h3 className="font-semibold text-gray-600">Total Subscribers</h3>
             </div>
           </div>
-          <p className="text-3xl font-bold text-gray-900">{stats?.totalSubscribers || 0}</p>
+          <p className="text-3xl font-bold">{stats?.totalSubscribers || 0}</p>
           <div className="flex items-center gap-2 text-green-600 text-sm">
             <IoTrendingUp />
             <span>2.35%</span>
@@ -80,7 +80,7 @@ const data = [
         </div>
 
         {/* Reviews */}
-        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
+        <div className="  rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="bg-green-100 text-green-600 p-3 rounded-full text-xl">
@@ -89,7 +89,7 @@ const data = [
               <h3 className="font-semibold text-gray-600">Total Reviews</h3>
             </div>
           </div>
-          <p className="text-3xl font-bold text-gray-900">{stats?.totalReviews || 0}</p>
+          <p className="text-3xl font-bold ">{stats?.totalReviews || 0}</p>
           <div className="flex items-center gap-2 text-red-500 text-sm">
            
             <span>4.75%</span>
@@ -98,7 +98,7 @@ const data = [
         </div>
 
         {/* Forums */}
-        <div className="bg-white rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
+        <div className=" rounded-xl shadow-md border border-gray-100 p-6 flex flex-col gap-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="bg-yellow-100 text-yellow-600 p-3 rounded-full text-xl">
@@ -107,7 +107,7 @@ const data = [
               <h3 className="font-semibold text-gray-600">Total Forums</h3>
             </div>
           </div>
-          <p className="text-3xl font-bold text-gray-900">{stats?.totalForums || 0}</p>
+          <p className="text-3xl font-bold  ">{stats?.totalForums || 0}</p>
           <div className="flex items-center gap-2 text-green-600 text-sm">
             <IoTrendingUp />
             <span>0.59%</span>
@@ -117,8 +117,8 @@ const data = [
       </div>
       
       {/* Donut Chart Section */}
-     <div className='bg-white items-center  justify-center rounded-xl shadow-md border border-gray-100'>
-       <h1 className='text-xl font-bold text-[#064877] m-auto p-5'>Members, Trainer, Subscriber and Trainees Overview</h1> 
+     <div className='  items-center  justify-center rounded-xl shadow-md border border-gray-100'>
+       <h1 className='text-xl font-bold text-[#3624bf] m-auto p-5'>Members, Trainer, Subscriber and Trainees Overview</h1> 
         
         <div className="w-full py-3 lg:w-1/2 h-96">
           <ResponsiveContainer width="100%" height="100%">

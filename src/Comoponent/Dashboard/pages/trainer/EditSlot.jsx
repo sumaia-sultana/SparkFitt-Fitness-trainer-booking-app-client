@@ -181,7 +181,7 @@ const EditSlot = () => {
 
   <button
     type="submit"
-    className="btn bg-[#064877] text-white hover:bg-[#5f8aa8] w-full">
+    className="btn bg-[#3624bf] text-white hover:bg-[#5f8aa8] w-full">
     Update Slot
   </button>
 </form>

@@ -7,7 +7,7 @@ const ErrorPage = () => {
 
             <h1 className='text-8xl text-gray-400 font-bold'>404</h1>
 
-           <h1 className='text-3xl text-[#064877] font-bold'>Page not found!</h1>
+           <h1 className='text-3xl text-[#3624bf] font-bold'>Page not found!</h1>
             <div className='flex justify-center'>
                 <img 
                     className='size-72' 
@@ -16,7 +16,7 @@ const ErrorPage = () => {
                 />
             </div>
             <p className='text-gray-500 pb-3'>Opps!! No Content Found With the route.</p>
-            <Link to="/" className="btn bg-[#064877] text-white px-2 py-1.5 rounded"> Back To Home</Link>
+            <Link to="/" className="btn bg-[#3624bf] text-white px-2 py-1.5 rounded"> Back To Home</Link>
         </div>
     );
 };

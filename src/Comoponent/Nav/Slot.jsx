@@ -48,11 +48,11 @@ const Slot = () => {
 
     return (
   <div className="container mx-auto px-4 py-6">
-  <h2 className="text-3xl font-bold mb-6 text-[#064877] text-center">Available Slots</h2>
+  <h2 className="text-3xl font-bold mb-6 text-[#3624bf] text-center">Available Slots</h2>
 
   <div className="overflow-x-auto">
     <table className="min-w-full rounded-sm table-auto border-collapse border border-gray-200">
-      <thead className="bg-[#064877] text-white">
+      <thead className="bg-[#3624bf] text-white">
         <tr>
           <th className="p-3 border">Class Name</th>
           <th className="p-3 border">Date</th>
@@ -79,7 +79,7 @@ const Slot = () => {
             <td className="p-2 border">{slot.packageType}</td>
             <td className="p-2 border">${slot.price}</td>
             <td className="p-2 border">
-              <button className="text-[#064877] border border-[#064877] px-3 py-1 rounded-sm hover:bg-[#064877] hover:text-white transition">
+              <button className="text-[#3624bf] border border-[#3624bf] px-3 py-1 rounded-sm hover:bg-[#3624bf] hover:text-white transition">
                 <Link to={`/booking-trainer/${slot._id}`} >Book Slot</Link>
               </button>
             </td>

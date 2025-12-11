@@ -3,6 +3,9 @@
  @source "../.flowbite-react/class-list.json";
  /* @import "flowbite"; */
 
- #root {
-  background-color: white;
-}
+ .dark{
+  @apply bg-[#171923] text-white
+ }
+ .light{
+  @apply bg-white text-black
+ }

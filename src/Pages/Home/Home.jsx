@@ -14,15 +14,21 @@ const Home = () => {
     return (
         <>
         <HelmetTitle title="Home" />
-        <div>
+        <div >
+           
             <Banner/>
+             <main className="max-w-7xl mx-auto px-4 py-12 space-y-10">
             <HmFeatured/>
+            <Review/>
+             <FeaturedCls/>
             <LatestForum/>
             <AboutUs/>
-            <FeaturedCls/>
-            <Review/>
+           
+            
             <NewsLetter/>
-            <Teamtrainer/>
+              <Teamtrainer/>
+            </main>
+         
             
         </div>
         </>

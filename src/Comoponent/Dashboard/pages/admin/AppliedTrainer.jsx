@@ -21,13 +21,13 @@ import { Link } from 'react-router';
   if (isLoading) return <LoadSpinner />;
     return (
  <div className="lg:px-4 md:px-3 px-1 py-6 max-w-6xl mx-auto">
-      <h2 className="text-2xl font-bold text-[#064877] mb-6">Applied Trainers</h2>
+      <h2 className="text-2xl font-bold text-[#3624bf] mb-6">Applied Trainers</h2>
 
       {/* --- Desktop Table View --- */}
       <div className="overflow-x-auto hidden md:block">
-        <table className="min-w-full bg-white border border-gray-200">
+        <table className="min-w-full shadow-md border-gray-200">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className=" ">
               <th className="py-3 px-4 border-b text-left">Photo</th>
               <th className="py-3 px-4 border-b text-left">Name</th>
               <th className="py-3 px-4 border-b text-left">Email</th>
@@ -62,7 +62,7 @@ import { Link } from 'react-router';
                 <td className="py-3 px-4 flex gap-3 items-center">
                   <Link
                     to={`/dashboard/appTrainer-details/${trainer._id}`}
-                    className="text-[#064877] py-5 hover:underline text-sm font-medium">
+                    className="text-[#3624bf] py-5 hover:underline text-sm font-medium">
                     Details
                   </Link>
                    
@@ -89,7 +89,7 @@ import { Link } from 'react-router';
             </div>
             <div className="mt-4 flex justify-between items-center">
               <Link to={`/dashboard/appTrainer-details/${trainer._id}`}
-                className="text-[#064877] hover:underline text-sm font-medium">
+                className="text-[#3624bf] hover:underline text-sm font-medium">
                 Details
               
               </Link>

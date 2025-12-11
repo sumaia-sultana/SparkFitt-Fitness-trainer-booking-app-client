@@ -49,7 +49,7 @@ const AllTrainers = () => {
 
     return (
          <div className="max-w-5xl mx-auto p-6">
-      <h2 className="text-3xl font-bold text-[#064877] mb-6">All Trainers</h2>
+      <h2 className="text-3xl font-bold text-[#3624bf] mb-6">All Trainers</h2>
       <div className="overflow-x-auto bg-white shadow-md rounded p-4">
         <table className="min-w-full table-auto border border-gray-300">
           <thead className="bg-gray-100">

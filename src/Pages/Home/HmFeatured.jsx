@@ -32,7 +32,7 @@ const features = [
   {
     title: 'Affordable Plans',
     description: 'Flexible pricing and packages for all budgets.',
-    icon: <FaDollarSign className="w-8 h-8 text-yellow-500" />,
+    icon: <FaDollarSign className="w-8 h-8 text-[#E8EC3A]" />,
   },
 ];
 
@@ -40,18 +40,18 @@ const features = [
 const HmFeatured = () => {
     return (
          <section className="my-16 px-4 max-w-7xl  mx-auto">
-      <h2 className="text-3xl text-[#064877] font-bold mb-10 text-center">Why Choose SparkFit?</h2>
-      <div className="grid gap-6 grid-cols-1 bg-white sm:grid-cols-2 lg:grid-cols-3">
+      <h2 className="text-2xl text-[#3624bf] font-bold mb-10 text-center">Why Choose SparkFit?</h2>
+      <div className="grid gap-6 grid-cols-1  sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
-          <Card
+          <div
             key={index}
-            className="rounded-2xl shadow hover:shadow-lg transition duration-300">
+            className="rounded-2xl shadow hover:shadow-lg transition px-5 py-3 duration-300">
             <div className="mb-4">{feature.icon}</div>
-            <h5 className="text-xl font-semibold tracking-tight text-gray-900">
+            <h5 className="text-xl font-semibold tracking-tight ">
               {feature.title}
             </h5>
-            <p className="font-normal text-gray-700">{feature.description}</p>
-          </Card>
+            <p className="font-normal text-gray-500">{feature.description}</p>
+          </div>
         ))}
       </div>
     </section>

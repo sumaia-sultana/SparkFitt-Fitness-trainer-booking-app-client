@@ -114,12 +114,12 @@ const convertTo12HourFormat = (time24) => {
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4 text-[#064877]">Manage My Slot</h2>
+      <h2 className="text-2xl font-bold mb-4 text-[#3624bf]">Manage My Slot</h2>
       <div className="grid md:grid-cols-2 gap-4">
         {trainerSlots.map((slot) => (
           <div key={slot._id} className="bg-white rounded-xl shadow-md p-4 border">
             <h3 className="text-xl font-semibold">{slot.type} Session:
-              <span className='text-[#064877] text-lg'>{slot.slot_name} </span></h3>
+              <span className='text-[#3624bf] text-lg'>{slot.slot_name} </span></h3>
             <p>
               🗓️ <strong>Date:</strong> {slot.date}
             </p>
@@ -143,7 +143,7 @@ const convertTo12HourFormat = (time24) => {
             <div className="mt-4 flex lg:justify-between justify-around gap-3">
               <button
                 onClick={() => handleEdit(slot._id)}
-                className=" hover:text-blue-500 text-[#064877] rounded flex items-center gap-1" >
+                className=" hover:text-blue-500 text-[#3624bf] rounded flex items-center gap-1" >
                 <FaEdit className='size-5' /> 
               </button>
               
@@ -151,7 +151,7 @@ const convertTo12HourFormat = (time24) => {
       onClick={() => handleToggleAvailability(slot._id)}
       className={`btn btn-sm rounded-full text-white ${
         slot.available
-          ? 'bg-[#064877] hover:bg-blue-700'
+          ? 'bg-[#3624bf] hover:bg-[#3624bf]'
           : 'bg-gray-500 hover:bg-gray-600'
       }`}
     >

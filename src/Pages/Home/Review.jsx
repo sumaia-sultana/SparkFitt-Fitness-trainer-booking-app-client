@@ -1,9 +1,8 @@
-import { Carousel } from 'flowbite-react';
  
-import ReviewCard from './ReviewCard';
 import useAxiosSecure from '../../Comoponent/hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import { useMemo } from 'react';
+import Teamtrainer from './Teamtrainer';
 
 const Review = () => {
     const axiosSecure = useAxiosSecure()
@@ -35,29 +34,20 @@ const Review = () => {
     return chunks;
   };
 
-  return chunkArray(allReviews, 3); // 3 per slide
+  return chunkArray(allReviews, 3); 
 }, [reviews]);
 
  
 if (isLoading) return <p className="text-center mt-4">Loading reviews...</p>;
   if (isError) return <p className="text-center mt-4">Failed to load reviews.</p>;
   if (!reviews.length) return <p className="text-center mt-4">No reviews available.</p>;
+console.log(slides);
 
     return (
-    <div className="w-full max-w-6xl mx-auto mt-28 mb-28 z-10 relative">
-    <Carousel slideInterval={7000} className="rounded-lg">
-      {slides.map((group, index) => (
-        <div
-          key={index}
-          className="flex gap-6 justify-center items-stretch px-6 py-8"
-        >
-          {group.map((review) => (
-            <ReviewCard key={`${review.trainerName}-${review._id}`} review={review} />
-          ))}
-        </div>
-      ))}
-    </Carousel>
-  </div>
+    <>
+   
+    <Teamtrainer reviews={reviews}/>
+  </>
     );
 };
 
