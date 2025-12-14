@@ -52,6 +52,9 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 - Stripe checkout for session bookings
 - View payment history on user dashboard
 
+### 💳 Dark-Light Mode
+ -Tailwind CSS Theme Context
+
 ---
 
 ## 🛠 Tech Stack
@@ -61,7 +64,7 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 | React.js              | Node.js + Express.js   | Firebase Auth          |
 | React Router          | MongoDB (Mongoose)     | Stripe API             |
 | Tailwind CSS          | JWT for secure APIs    | TanStack React Query  |
-| Axios                 |                        | Flowbite UI Components|
+| Axios                 |                        | Flowbite, Framer|
 
 ---
 
