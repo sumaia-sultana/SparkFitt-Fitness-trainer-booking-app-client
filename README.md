@@ -12,7 +12,8 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 
 ## 📸 Screenshots
 
-> _Add screenshots here to visually highlight the app (homepage, booking, dashboard, forum, etc.)_
+>  <img width="1201" height="885" alt="image" src="https://github.com/user-attachments/assets/16498fac-24eb-45cf-8ffc-cca5440c19dd" />
+
 
 ---
 
@@ -52,7 +53,7 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 - Stripe checkout for session bookings
 - View payment history on user dashboard
 
-### 💳 Dark-Light Mode
+### 🌓 Dark-Light Mode
  -Tailwind CSS Theme Context
 
 ---
