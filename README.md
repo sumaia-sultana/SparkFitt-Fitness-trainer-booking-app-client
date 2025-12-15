@@ -22,7 +22,17 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 ### 🔐 Authentication & Authorization
 - Firebase Authentication (Email/Password, Google login)
 - JWT-based secure route protection
-- Role-based access: **Admin**, **Trainer**, and **User**
+- Role-based access: ✔**Admin**,
+                     ✔**Trainer**, and
+                     ✔**Member(All Logged In User)**
+
+###  👩‍👧‍👦Member Dashboard:
+
+- Book any Trainer class
+- can Apply to be trainer
+- Can Subscribe in newsletter
+- can read forums and allow to give upvoat downvoat
+
 
 ### 📅 Trainer Booking System
 - Browse approved trainers
@@ -38,6 +48,7 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 - Approve/reject trainer applications with feedback
 - Promote users to trainers
 - View payment history and manage users
+- Add forum post on Community.
 
 ### 📚 Class Library
 - Paginated class listings with trainer details
@@ -52,6 +63,12 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 ### 💳 Payment Integration
 - Stripe checkout for session bookings
 - View payment history on user dashboard
+
+###  Admin:
+**Credentials: 
+
+- email: salem@gmail.com
+- password: salem1234
 
 ### 🌓 Dark-Light Mode
  -Tailwind CSS Theme Context
