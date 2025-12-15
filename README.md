@@ -23,9 +23,10 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 - Firebase Authentication (Email/Password, Google login)
 - JWT-based secure route protection
 - Role-based access:
+  
      ✔ **Admin**
   
-     ✔ **Trainer**, and
+     ✔ **Trainer** and
   
      ✔ **Member(All Logged In User)**
 
