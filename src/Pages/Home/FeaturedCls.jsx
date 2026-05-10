@@ -17,7 +17,7 @@ const FeaturedCls = () => {
     return (
         <section className="my-12">
       <h2 className="text-3xl text-[#6366f1] font-bold text-center mb-8"> Featured Classes</h2>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 grid-cols-1 gap-6">
         {featured.map((cls) => (
           <div key={cls._id} className="p-4   rounded-2xl shadow-md">
             <h3 className="text-xl text-[#6366f1] font-semibold">{cls.name}</h3>

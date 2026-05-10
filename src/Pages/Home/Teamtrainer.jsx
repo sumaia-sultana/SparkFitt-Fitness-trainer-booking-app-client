@@ -40,12 +40,12 @@ const Teamtrainer = ({reviews}) => {
   
     return (
         <section className="py-12 light:bg-gray-100">
-      <h2 className="text-3xl font-bold text-[#6366f1] text-center mb-8">Meet Our Trainers</h2>
+      <h2 className="text-4xl font-bold text-[#6366f1] text-center mb-8">Meet Our Trainers</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8">
         {topTrainers.slice(0,3).map((trainer) => {
      
          return(
-           <div key={trainer._id} className="light:bg-white shadow-md rounded-lg p-6 text-center">
+           <div key={trainer._id} className="light:bg-white border border-[#d6d3d1] bg-[#e7e5e4] dark:bg-[#2c2825] dark:border-[#3a3633] shadow-md rounded-lg p-6 text-center">
             <img
               src={trainer.photo}
               alt={trainer.name}
@@ -66,7 +66,7 @@ const Teamtrainer = ({reviews}) => {
     {trainer.skills.map((skill, i) => (
       <button
         key={i}
-        className="px-3 py-1 bg-green-100 text-green-500 rounded-full text-sm"
+        className="px-3 py-1 bg-[#a6aefb] text-[#3730a3] rounded-full text-sm"
       >
         {skill.split(' ')[0]} {/* takes only the first word */}
       </button>
