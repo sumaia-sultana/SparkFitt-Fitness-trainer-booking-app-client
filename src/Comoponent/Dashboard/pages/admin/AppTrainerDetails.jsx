@@ -64,7 +64,7 @@ const AppTrainerDetails = () => {
 
     return (
     <div className="max-w-3xl mx-auto px-4 py-8">
-  <h2 className="text-2xl font-bold text-[#3624bf] mb-6">Trainer Application Details</h2>
+  <h2 className="text-2xl font-bold text-[#6366f1] mb-6">Trainer Application Details</h2>
 
   <div className=" rounded-xl shadow-lg p-6 flex flex-col sm:flex-row items-center gap-6">
     {/* Trainer Photo */}
@@ -95,7 +95,7 @@ const AppTrainerDetails = () => {
       {/* Action Buttons */}
       
      <div className="flex gap-3">
-     <button onClick={() => handleApprove(trainer._id)} className="btn bg-[#3624bf] text-white py-1.5 px-2 rounded-md hover:bg-[#58829f]">
+     <button onClick={() => handleApprove(trainer._id)} className="btn bg-[#6366f1] text-white py-1.5 px-2 rounded-md hover:bg-[#58829f]">
         Approved
      </button>
      <button onClick={() => handleReject(trainer)} className="bg-red-700 hover:bg-red-400 btn text-white py-1 px-5 rounded-md">

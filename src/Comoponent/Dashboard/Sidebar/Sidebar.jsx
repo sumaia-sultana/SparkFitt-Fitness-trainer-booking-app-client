@@ -17,7 +17,7 @@ const Sidebar = ( ) => {
   const {logOut} = useAuth();
  
   return (
-    <div className="fixed top-0 left-0 h-screen lg:w-64 bg-[#3624bf] text-white flex flex-col p-4 overflow-y-auto">
+    <div className="fixed top-0 left-0 h-screen lg:w-64 bg-[#6366f1] text-white flex flex-col p-4 overflow-y-auto">
      <div className="flex gap-2">
         <img className="size-7 rounded-full" src="https://i.ibb.co/ds1dKPKj/gym-logo.jpg"></img>
       <Link to="/" className="text-2xl  font-bold mb-8">SparkFit</Link>

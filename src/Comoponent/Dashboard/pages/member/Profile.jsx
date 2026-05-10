@@ -129,7 +129,7 @@ const Profile = () => {
       <button
         onClick={handleSave}
         disabled={saving}
-        className="w-full bg-[#3624bf] text-white py-2 rounded-lg hover:bg-[#6b9dc1] transition">
+        className="w-full bg-[#6366f1] text-white py-2 rounded-lg hover:bg-[#6b9dc1] transition">
         {saving ? 'Saving...' : 'Save Changes'}
       </button>
     </div>

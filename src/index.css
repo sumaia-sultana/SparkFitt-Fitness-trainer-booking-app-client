@@ -2,10 +2,11 @@
  @plugin "flowbite-react/plugin/tailwindcss";
  @source "../.flowbite-react/class-list.json";
  /* @import "flowbite"; */
+@custom-variant dark (&:where(.dark, .dark *));
 
  .dark{
-  @apply bg-[#171923] text-white
+  @apply bg-[#1e1b18] text-[#e2e8f0]
  }
  .light{
-  @apply bg-white text-black
+  @apply bg-[#e7e5e4] text-[#1e293b]
  }

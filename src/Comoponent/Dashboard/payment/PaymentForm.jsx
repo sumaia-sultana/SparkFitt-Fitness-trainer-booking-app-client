@@ -132,14 +132,14 @@ const PaymentForm = ( ) => {
     </div>
 
     <form onSubmit={handleSubmit}>
-      <CardElement className="py-6 px-4 border border-gray-300 text-[#3624bf] rounded-lg" />
+      <CardElement className="py-6 px-4 border border-gray-300 text-[#6366f1] rounded-lg" />
       <button
         type="submit"
        disabled={alreadyBooked}
         className={`lg:px-4 p-0.5 py-2 rounded w-full transition ${
             alreadyBooked
               ? 'bg-gray-400 cursor-not-allowed'
-              : 'bg-[#3624bf] text-white hover:bg-[#58829f]'
+              : 'bg-[#6366f1] text-white hover:bg-[#58829f]'
           }`}
         >
           {alreadyBooked ? 'Already Booked' : 'Pay Now'} ${selectedPackage.price}

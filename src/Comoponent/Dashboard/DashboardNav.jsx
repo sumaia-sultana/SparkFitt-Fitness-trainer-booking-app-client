@@ -13,7 +13,7 @@ const DashboardNav = () => {
     <div className=" items-center justify-between px-6 py-3  ">
       {/* Left: Logo + Home */}
       <div className=" items-center gap-6">
-        <Link to="/dashboard" className="text-xl text-[#3624bf] font-bold text-primary">
+        <Link to="/dashboard" className="text-xl text-[#6366f1] font-bold text-primary">
            SparkFit
         </Link>
         

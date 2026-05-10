@@ -154,7 +154,7 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
 
   return (
     <div className="max-w-3xl mx-auto p-6  rounded-lg shadow">
-      <h2 className="text-2xl font-bold mb-6 text- [#3624bf]">Apply to Become a Trainer</h2>
+      <h2 className="text-2xl font-bold mb-6 text- [#6366f1]">Apply to Become a Trainer</h2>
       <form onSubmit={handleSubmit} className="space-y-4 border border-gray-50 p-3.5 rounded-3xl">
 
         {/* Full Name */}
@@ -278,7 +278,7 @@ if (!response.data?.acknowledged || response.data.modifiedCount === 0) {
         {/* Submit */}
         <button
           type="submit"
-          className="btn py-3 rounded-sm bg- [#3624bf] text-white font-semibold w-full hover:bg-[#4f738b]"
+          className="btn py-3 rounded-sm bg- [#6366f1] text-white font-semibold w-full hover:bg-[#4f738b]"
           disabled={submitting}
         >
           {submitting ? 'Submitting...' : 'Apply'}

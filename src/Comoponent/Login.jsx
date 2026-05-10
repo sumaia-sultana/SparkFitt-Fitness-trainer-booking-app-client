@@ -73,7 +73,7 @@ const Login = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#2596be] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -90,7 +90,7 @@ const Login = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#2596be] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-[#ffffff] focus:outline-[#6366f1] bg-gray-200 text-gray-900'
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ const Login = () => {
           <div>
             <button
               type='submit'
-              className='bg-[#2596be] w-full rounded-md py-3 text-white'
+              className='bg-[#6366f1] w-full rounded-md py-3 text-[#ffffff]'
             >
               {loading ? (
                 <TbFidgetSpinner className='animate-spin m-auto' />
@@ -109,7 +109,7 @@ const Login = () => {
           </div>
         </form>
         <div className='space-y-1'>
-          <button className='text-xs hover:underline hover:text-[#2596be] text-gray-400'>
+          <button className='text-xs hover:underline hover:text-[#6366f1] text-gray-400'>
             Forgot password?
           </button>
         </div>
@@ -131,7 +131,7 @@ const Login = () => {
           Don&apos;t have an account yet?{' '}
           <Link
             to='/signup'
-            className='hover:underline hover:text-[#2596be] text-gray-600'>
+            className='hover:underline hover:text-[#6366f1] text-gray-600'>
             Sign up
           </Link>
           .

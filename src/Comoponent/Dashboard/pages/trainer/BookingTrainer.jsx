@@ -128,7 +128,7 @@ const BookingTrainer = () => {
               </ul>
               <p className="text-lg font-semibold mb-3">Price: ${pkg.price}</p>
              <button
-  className="bg-[#3624bf] text-white px-4 py-2 rounded hover:bg-[#58829f] w-full"
+  className="bg-[#6366f1] text-white px-4 py-2 rounded hover:bg-[#58829f] w-full"
   onClick={() => {
     if (user?.email === data?.trainerEmail) {
       Swal.fire({

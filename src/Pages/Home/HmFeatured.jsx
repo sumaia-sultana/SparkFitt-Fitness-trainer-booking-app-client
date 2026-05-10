@@ -40,7 +40,7 @@ const features = [
 const HmFeatured = () => {
     return (
          <section className="my-16 px-4 max-w-7xl  mx-auto">
-      <h2 className="text-2xl text-[#3624bf] font-bold mb-10 text-center">Why Choose SparkFit?</h2>
+      <h2 className="text-2xl text-[#6366f1] font-bold mb-10 text-center">Why Choose SparkFit?</h2>
       <div className="grid gap-6 grid-cols-1  sm:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
           <div

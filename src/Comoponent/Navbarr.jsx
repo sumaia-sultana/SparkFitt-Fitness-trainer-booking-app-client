@@ -1,7 +1,7 @@
  
 import { Link } from 'react-router';
 import useAuth from './hooks/useAuth';
-import { FaMoon } from 'react-icons/fa';
+import { GoMoon } from "react-icons/go";
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../Provider/AuthProvider';
 import { FiSun } from 'react-icons/fi';
@@ -14,20 +14,20 @@ const Navbarr = () => {
   const {darkMode,setDarkmode} = useContext(ThemeContext)
 
   return (
-    <nav className="sticky  top-0 z-50 bg-white text-[#3624bf] shadow-md light:bg-gray-50 border-b
-        border-gray-200 px-4 py-2">
+    <nav className="fixed top-0 w-full z-50 dark:bg-[#1e1b18] text-[#6366f1] shadow-md bg-[#e7e5e4]
+          px-4 py-2">
       {/* NAV WRAPPER */}
-      <div className=' flex justify-between'>
-        <div className="flex justify-between items-center">
+      <div className='max-w-7xl mx-auto  flex items-center justify-between'>
+        <div className="flex justify-between  ">
         
         {/* BRAND */}
         <Link to="/" className="flex items-center gap-2">
           <img
-            src="https://i.ibb.co/ds1dKPKj/gym-logo.jpg"
+            src="/assets/sparkfit-logo.png"
             className="h-8 w-8 rounded-full"
             alt="SparkFit Logo"
           />
-          <span className="text-[#3624bf] text-2xl font-bold">SparkFit</span>
+          <span className="text-[#6366f1] text-2xl font-bold">SparkFit</span>
         </Link>
    
       </div>
@@ -43,10 +43,10 @@ const Navbarr = () => {
 
           {/* DARK MODE BUTTON */}
           <button
-            className="px-1 text-yellow-300"
+            className="px-1"
             onClick={() => setDarkmode((m) => !m)}
           >
-            {darkMode ? <FiSun size={20} /> : <FaMoon size={20} />}
+            {darkMode ? <FiSun className='text-[#ef4444]' size={20} /> : <GoMoon size={24} />}
           </button>
 
           {/* USER DROPDOWN OR LOGIN */}
@@ -85,9 +85,9 @@ const Navbarr = () => {
             </div>
           ) : (
             <Link
-              className="hover:text--[#3624bf] relative -top-2.5 hover:border-2 
+              className="hover:text--[#6366f1]   hover:border-2 
               rounded-xl lg:px-3 lg:py-2 md:px-3 md:py-2 
-              hover:border--[#3624bf] bg--[#3624bf] text-white"
+              hover:border--[#6366f1] bg-[#6366f1] text-[#ffffff]"
               to="/login"
             >
               Login

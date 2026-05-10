@@ -50,7 +50,7 @@ const Signup = () => {
        const result = await signInWithGoogle();
     const user = result.user;
 
-    // ✅ Check if user exists in DB first
+    //  Check if user exists in DB first
     const res = await axios.get(`${import.meta.env.VITE_API_URL}/user/${user.email}`);
     if (!res.data || !res.data.role) {
       // If no role found, user doesn't exist yet — so save it
@@ -65,7 +65,7 @@ const Signup = () => {
     }
   }
     return (
-        <div className='flex justify-center items-center min-h-screen bg-white'>
+        <div className='flex justify-center items-center min-h-screen bg-[#ffffff]'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
@@ -87,7 +87,7 @@ const Signup = () => {
                 name='name'
                 id='name'
                 placeholder='Enter Your Name Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#2596be] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -96,7 +96,7 @@ const Signup = () => {
                 Select Image:
               </label>
               <input
-                className='bg-gray-200 cursor-pointer'
+                className='bg-[#d1d5db] cursor-pointer'
                 type='file'
                 id='image'
                 name='image'
@@ -113,7 +113,7 @@ const Signup = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#2596be] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -130,7 +130,7 @@ const Signup = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#2596be] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
               />
             </div>
           </div>
@@ -138,7 +138,7 @@ const Signup = () => {
           <div>
             <button
               type='submit'
-              className='bg-[#2596be] w-full rounded-md py-3 text-white'
+              className='bg-[#6366f1] w-full rounded-md py-3 text-[#ffffff]'
             >
               {loading ? (
                 <TbFidgetSpinner className='animate-spin m-auto' />
@@ -167,7 +167,7 @@ const Signup = () => {
           Already have an account?{' '}
           <Link
             to='/login'
-            className='hover:underline hover:text-[#2596be] text-gray-600'
+            className='hover:underline hover:text-[#6366f1] text-gray-600'
           >
             Login
           </Link>

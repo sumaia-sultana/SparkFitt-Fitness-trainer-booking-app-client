@@ -29,8 +29,8 @@ const LatestForum = () => {
 
     return (
         <div className="  ">
-      <h2 className="text-2xl text-center text-[#3624bf] font-bold mb-4"> Latest Community Posts</h2>
-      <div className="px-5 py-5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <h2 className="text-2xl text-center text-[#6366f1] font-bold mb-4"> Latest Community Posts</h2>
+      <div className="  py-5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {posts.slice(0, 6).map(post => (
           <div key={post._id} className="  p-4 rounded-xl shadow-md hover:shadow-lg transition-all">
             <h3 className="text-lg font-semibold">{post.title}</h3>

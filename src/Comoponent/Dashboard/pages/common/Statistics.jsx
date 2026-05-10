@@ -118,7 +118,7 @@ const data = [
       
       {/* Donut Chart Section */}
      <div className='  items-center  justify-center rounded-xl shadow-md border border-gray-100'>
-       <h1 className='text-xl font-bold text-[#3624bf] m-auto p-5'>Members, Trainer, Subscriber and Trainees Overview</h1> 
+       <h1 className='text-xl font-bold text-[#6366f1] m-auto p-5'>Members, Trainer, Subscriber and Trainees Overview</h1> 
         
         <div className="w-full py-3 lg:w-1/2 h-96">
           <ResponsiveContainer width="100%" height="100%">

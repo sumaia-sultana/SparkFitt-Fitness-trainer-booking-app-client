@@ -206,7 +206,7 @@ const AddNewSlot = ( ) => {
 
       <button
         type="submit"
-        className="btn bg-[#3624bf] text-white hover:bg-[#5f8aa8] w-full"
+        className="btn bg-[#6366f1] text-white hover:bg-[#5f8aa8] w-full"
       >
         Create Slot
       </button>

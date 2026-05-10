@@ -13,7 +13,7 @@ const AboutUs = () => {
 
         {/* Text Content */}
         <div className="px-5 py-3  left-0">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#3624bf] dark:text-[#6ba4cd]">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#6366f1] dark:text-[#818cf8]">
             About SparkFit
           </h2>
           <p className="    py-2 mb-6 text-justify leading-relaxed">
@@ -26,7 +26,7 @@ const AboutUs = () => {
             — no matter your fitness level. Let’s grow stronger together, one session at a time.
           </p>
 
-          <Link to='/trainers' className='bg-[#3624bf] rounded-md text-white px-2 py-2'>
+          <Link to='/trainers' className='bg-[#6366f1] rounded-md text-white px-2 py-2'>
             Join Our Journey
           </Link>
         </div>

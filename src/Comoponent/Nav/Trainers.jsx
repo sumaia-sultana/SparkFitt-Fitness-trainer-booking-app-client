@@ -63,7 +63,7 @@ const Trainers = () => {
   <div className='lg:flex md:flex px-5 py-5 mx-auto h-[600px] shadow-md rounded-lg overflow-hidden'>
         {/* Left: Trainer List */}
       <div className="lg:w-1/3 md:1/3 light:bg-white overflow-y-auto ">
-        <h2 className="text-2xl font-bold p-4 text-center bg-[#3624bf] text-white">Trainers</h2>
+        <h2 className="text-2xl font-bold p-4 text-center bg-[#6366f1] text-white">Trainers</h2>
         {trainers.map((trainer) => (
           <div
             key={trainer._id}
@@ -86,7 +86,7 @@ const Trainers = () => {
         className="">
        
       </button>
-       <Link className='px-3 py-1 text-sm bg-[#3624bf] text-white rounded  hover:bg-[#618dac]' to={`/trainer-details/${trainer._id}`}>
+       <Link className='px-3 py-1 text-sm bg-[#6366f1] text-white rounded  hover:bg-[#618dac]' to={`/trainer-details/${trainer._id}`}>
            Know More</Link>
             </div>
             
@@ -95,16 +95,16 @@ const Trainers = () => {
       </div>    
       {/* Right: Available Slots */}
       <div className="flex-1 p-6 text-center overflow-y-auto">
-        <h2 className="text-2xl font-semibold mb-4 text-[#3624bf]">Available Slots</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-[#6366f1]">Available Slots</h2>
        
         {!selectedTrainer &&  
         <>
         <p className='font-mono text-gray-600'>Click! & Select a trainer to view their available slots.</p>  
         <div className="mx-auto p-10 text-center">     
-          <button className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[#3624bf] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
-          <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#3624bf] group-hover:h-full"></span>
+          <button className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[#6366f1] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group">
+          <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#6366f1] group-hover:h-full"></span>
           <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
-            <svg className="w-5 h-5 text-[#3624bf]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            <svg className="w-5 h-5 text-[#6366f1]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
           </span>
           <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
             <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
@@ -137,7 +137,7 @@ const Trainers = () => {
                 <p><strong>Class Type:</strong> {slot.classType}</p>
                 <p><strong>Location:</strong> {slot.location}</p>
                 <p><strong>Package Type:</strong>{slot.packageType}</p>
-                <button onClick={() => handleSlotClick(slot._id)} className='bg-[#3624bf] text-white px-2 py-1 rounded-md '>
+                <button onClick={() => handleSlotClick(slot._id)} className='bg-[#6366f1] text-white px-2 py-1 rounded-md '>
                   Book Now</button>
               </div>
             ))}
@@ -176,7 +176,7 @@ const Trainers = () => {
             <p><strong>Package Type:</strong> {slot.packageType}</p>
             <button
               onClick={() => handleSlotClick(slot._id)}
-              className="mt-2 w-full bg-[#3624bf] text-white   px-3 py-2 rounded-md">
+              className="mt-2 w-full bg-[#6366f1] text-white   px-3 py-2 rounded-md">
               Book Now
             </button>
           </div>
