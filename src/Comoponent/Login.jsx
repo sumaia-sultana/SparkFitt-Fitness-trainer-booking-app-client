@@ -49,11 +49,11 @@ const Login = () => {
       <>
       <HelmetTitle title="Log in" />
          <div className='flex justify-center items-center min-h-screen  '>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-[#3a3633] dark:text-[#e2e8f0]'>
+      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#f5f5f4] border-[#d6d3d1] dark:bg-[#3a3633] dark:text-[#e2e8f0]'>
          
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
-          <p className='text-sm text-gray-400'>
+          <p className='text-sm text-[#6b7280]'>
             Sign in to access your account
           </p>
         </div>
@@ -73,7 +73,7 @@ const Login = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-[#d6d3d1] dark:border-[#2c2825] focus:outline-[#6366f1] bg-[#d6d3d1] dark:bg-[#3a3633]  '
                 data-temp-mail-org='0'
               />
             </div>
@@ -90,7 +90,7 @@ const Login = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-[#ffffff] focus:outline-[#6366f1] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-[#d6d3d1] dark:border-[#2c2825] focus:outline-[#6366f1] bg-[#d6d3d1] dark:bg-[#3a3633]  '
               />
             </div>
           </div>
@@ -114,11 +114,11 @@ const Login = () => {
           </button>
         </div>
         <div className='flex items-center pt-4 space-x-1'>
-          <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
+          <div className='flex-1 h-px sm:w-16  bg-[#2c2825]'></div>
           <p className='px-3 text-sm dark:text-gray-400'>
             Login with social accounts
           </p>
-          <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
+          <div className='flex-1 h-px sm:w-16  bg-[#2c2825]'></div>
         </div>
         <div
           onClick={handleGoogleSignIn}

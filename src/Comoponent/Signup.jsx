@@ -66,10 +66,10 @@ const Signup = () => {
   }
     return (
         <div className='flex justify-center items-center min-h-screen  '>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-[#3a3633]'>
+      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 border border-[#d6d3d1] dark:border-[#3a3633] bg-[#f5f5f4] dark:bg-[#3a3633]'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl dark:text-[#e2e8f0] font-bold'>Sign Up</h1>
-          <p className='text-sm text-gray-400'>Welcome to PlantNet</p>
+          <p className='text-sm text-[#484441] dark:text-[#6b7280]'>Welcome to SparkFit</p>
         </div>
         <form
           onSubmit={handleSubmit}
@@ -87,7 +87,7 @@ const Signup = () => {
                 name='name'
                 id='name'
                 placeholder='Enter Your Name Here'
-                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] focus:outline-[#6366f1] bg-gray-200  '
+                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] border-[#d6d3d1] focus:outline-[#6366f1] bg-gray-200  '
                 data-temp-mail-org='0'
               />
             </div>
@@ -96,7 +96,7 @@ const Signup = () => {
                 Select Image:
               </label>
               <input
-                className='dark:border-[#2c2825] rounded-md border px-4 py-2 cursor-pointer'
+                className='dark:border-[#2c2825] border-[#d6d3d1] rounded-md border px-4 py-2 cursor-pointer'
                 type='file'
                 id='image'
                 name='image'
@@ -113,7 +113,7 @@ const Signup = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] focus:outline-[#6366f1] bg-gray-200  '
+                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] border-[#d6d3d1] focus:outline-[#6366f1] bg-gray-200  '
                 data-temp-mail-org='0'
               />
             </div>
@@ -130,7 +130,7 @@ const Signup = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] focus:outline-[#6366f1] bg-gray-200  '
+                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] border-[#d6d3d1] focus:outline-[#6366f1] bg-gray-200  '
               />
             </div>
           </div>
@@ -149,15 +149,15 @@ const Signup = () => {
           </div>
         </form>
         <div className='flex items-center pt-4 space-x-1'>
-          <div className='flex-1 h-px sm:w-16  '></div>
+          <div className='flex-1 h-px sm:w-16  bg-[#2c2825] '></div>
           <p className='px-3 text-sm  '>
             Signup with social accounts
           </p>
-          <div className='flex-1 h-px sm:w-16 dark:bg-[#2c2825]'></div>
+          <div className='flex-1 h-px sm:w-16  bg-[#2c2825]'></div>
         </div>
         <div
           onClick={handleGoogleSignIn}
-          className='flex justify-center items-center space-x-2 border m-3 p-2 dark:border-[#2c2825] border-rounded cursor-pointer'
+          className='flex justify-center items-center space-x-2 border m-3 p-2 dark:border-[#2c2825] border-[#d6d3d1] border-rounded cursor-pointer'
         >
           <FcGoogle size={32} />
 

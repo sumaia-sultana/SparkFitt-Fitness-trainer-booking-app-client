@@ -64,7 +64,7 @@ const Community = ( ) => {
       ) : (
         <div className="space-y-4">
           {forums.map((post) => (
-  <div key={post._id} className="p-4 shadow-2xl hover:shadow-[#6366f1] rounded-2xl">
+  <div key={post._id} className="p-4 border bg-[#f5f5f4] border-[#d6d3d1] dark:border-[#3a3633] dark:bg-[#2c2825] rounded-2xl">
     <div>
       <h3 className="text-xl font-semibold">{post.title}</h3>
       
