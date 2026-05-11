@@ -65,10 +65,10 @@ const Signup = () => {
     }
   }
     return (
-        <div className='flex justify-center items-center min-h-screen bg-[#ffffff]'>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+        <div className='flex justify-center items-center min-h-screen  '>
+      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-[#3a3633]'>
         <div className='mb-8 text-center'>
-          <h1 className='my-3 text-4xl font-bold'>Sign Up</h1>
+          <h1 className='my-3 text-4xl dark:text-[#e2e8f0] font-bold'>Sign Up</h1>
           <p className='text-sm text-gray-400'>Welcome to PlantNet</p>
         </div>
         <form
@@ -87,7 +87,7 @@ const Signup = () => {
                 name='name'
                 id='name'
                 placeholder='Enter Your Name Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] focus:outline-[#6366f1] bg-gray-200  '
                 data-temp-mail-org='0'
               />
             </div>
@@ -96,7 +96,7 @@ const Signup = () => {
                 Select Image:
               </label>
               <input
-                className='bg-[#d1d5db] cursor-pointer'
+                className='dark:border-[#2c2825] rounded-md border px-4 py-2 cursor-pointer'
                 type='file'
                 id='image'
                 name='image'
@@ -113,7 +113,7 @@ const Signup = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] focus:outline-[#6366f1] bg-gray-200  '
                 data-temp-mail-org='0'
               />
             </div>
@@ -130,7 +130,7 @@ const Signup = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#6366f1] bg-gray-200 text-gray-900'
+                className='w-full px-3 py-2 dark:bg-[#3a3633] border rounded-md dark:border-[#2c2825] focus:outline-[#6366f1] bg-gray-200  '
               />
             </div>
           </div>
@@ -149,25 +149,25 @@ const Signup = () => {
           </div>
         </form>
         <div className='flex items-center pt-4 space-x-1'>
-          <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
-          <p className='px-3 text-sm dark:text-gray-400'>
+          <div className='flex-1 h-px sm:w-16  '></div>
+          <p className='px-3 text-sm  '>
             Signup with social accounts
           </p>
-          <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
+          <div className='flex-1 h-px sm:w-16 dark:bg-[#2c2825]'></div>
         </div>
         <div
           onClick={handleGoogleSignIn}
-          className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'
+          className='flex justify-center items-center space-x-2 border m-3 p-2 dark:border-[#2c2825] border-rounded cursor-pointer'
         >
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>
         </div>
-        <p className='px-6 text-sm text-center text-gray-400'>
+        <p className='px-6 text-sm text-center  '>
           Already have an account?{' '}
           <Link
             to='/login'
-            className='hover:underline hover:text-[#6366f1] text-gray-600'
+            className='hover:underline hover:text-[#6366f1] '
           >
             Login
           </Link>

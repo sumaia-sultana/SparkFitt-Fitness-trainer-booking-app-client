@@ -48,7 +48,7 @@ import { Link } from 'react-router';
             transition={{ duration: 0.8 }}
             className="text-5xl sm:text-6xl lg:text-6xl font-bold leading-tight"
           >
-            Starts Here with Unstoppable  <span className="text-[#6366f1]">Strength, Confidence & Discipline</span> Every Day...  
+            Starts Your Fitness Journey & Become<span className="text-[#6366f1]"> Stronger </span> Than Yesterday 
           </motion.h1>
 
           <motion.p
@@ -69,28 +69,17 @@ import { Link } from 'react-router';
             className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start"
           >
             
-           <a href="#_" className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group">
-    <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-white opacity-[3%]"></span>
-    <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-white opacity-100 group-hover:-translate-x-8"></span>
-    <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-gray-900">Get Started</span>
-    <span className="absolute inset-0 border-2 border-white rounded-full"></span>
-</a>
+           <Link  to="/trainers" className="relative inline-flex items-center justify-start inline-block px-5 py-3 overflow-hidden font-bold rounded-full group">
+    <span className="w-32 h-32 rotate-45 translate-x-12 -translate-y-2 absolute left-0 top-0 bg-[#3a3633] dark:bg-white opacity-[3%]"></span>
+    <span className="absolute top-0 left-0 w-48 h-48 -mt-1 transition-all duration-500 ease-in-out rotate-45 -translate-x-56 -translate-y-24 bg-[#3a3633] dark:bg-white opacity-100 group-hover:-translate-x-8"></span>
+    <span className="relative w-full text-left text-[#3a3633] dark:text-white transition-colors duration-200 ease-in-out group-hover:text-[#e2e8f0] dark:group-hover:text-[#3a3633]">Get Started</span>
+    <span className="absolute inset-0 border-2 border-[#3a3633] dark:border-white rounded-full"></span>
+</Link>
 
              
           </motion.div>
 
-          {/* Stats Cards */}
-          {/* <div className="flex flex-wrap gap-6 pt-8 justify-center lg:justify-start">
-            <div className="bg-gradient-to-br from-red-500 to-red-700 p-5 rounded-3xl shadow-2xl min-w-[160px]">
-              <h3 className="text-3xl font-bold">20K+</h3>
-              <p className="text-sm text-white/80">Happy Members</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 p-5 rounded-3xl min-w-[160px]">
-              <h3 className="text-3xl font-bold">25K+</h3>
-              <p className="text-sm text-gray-300">Fitness Trainings</p>
-            </div>
-          </div> */}
+         
         </div>
 
         {/* Right Hero Image */}

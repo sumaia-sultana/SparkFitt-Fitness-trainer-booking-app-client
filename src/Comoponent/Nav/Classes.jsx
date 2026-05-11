@@ -63,13 +63,14 @@ import HelmetTitle from '../HelmetTitle';
     return (
      <>
      <HelmetTitle title="Classes" />
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 py-10">
+     <main className='max-w-7xl h-full mx-auto relative my-5 py-5 pt-10'>
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-5 py-10">
   {/* Column 1: Class Details (Image, About, Slots) */}
-  <div className="bg-white shadow rounded p-6">
+  <div className="  dark:bg-[#3a3633] border dark:border-[#3a3633] shadow rounded p-6">
     {selectedClass ? (
       <>
         <div className="items-center gap-4 mb-4">
-          <img src={selectedClass.image} alt={selectedClass.name} className="w-full h-[360px] rounded object-cover" />
+          <img src={selectedClass.image} alt={selectedClass.name} className="w-full  rounded object-cover" />
           <h2 className="text-3xl font-bold text-[#6366f1] mt-4">{selectedClass.name}</h2>
         </div>
 
@@ -82,7 +83,7 @@ import HelmetTitle from '../HelmetTitle';
                   className={`px-4 py-2 rounded ${
                     activeTab === tab
                       ? 'bg-[#6366f1] text-white'
-                      : 'bg-gray-200'
+                      : 'border '
                   }`}
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -92,7 +93,7 @@ import HelmetTitle from '../HelmetTitle';
 
         {/* Tab Content */}
         {activeTab === 'about' && (
-          <p className="text-gray-700">{selectedClass.description}</p>
+          <p className=" ">{selectedClass.description}</p>
         )}
 
         {activeTab === 'Available slot' && (
@@ -113,14 +114,14 @@ import HelmetTitle from '../HelmetTitle';
   </div>
 
   {/* Column 2: Trainer Cards (Visible only when "trainer" tab is selected) */}
-      <div className="bg-white rounded flex">
+      <div className=" border rounded flex">
         {activeTab === 'trainer' ? (
-          <div className="grid grid-cols-1 lg:h-32 gap-6 w-full">
+          <div className="grid grid-cols-1 lg:h-auto gap-6 w-full">
             {selectedClass ? (
               trainerDisplayList.map((trainer) => (
                 <div
                   key={trainer._id}
-                  className="bg-white justify-between rounded shadow-md p-5 gap-4 hover:shadow-lg transition"
+                  className=" justify-between rounded shadow-md p-5 gap-4 hover:shadow-lg transition"
                 >
                   <div className="flex justify-between">
                     <img
@@ -198,7 +199,7 @@ import HelmetTitle from '../HelmetTitle';
             <li key={cls._id}>
               <button
                 onClick={() => handleClassSelect(cls)}
-                className="w-full text-left px-5 font-semibold shadow-sm border border-gray-100 text-[#6366f1] py-2 bg-white rounded hover:bg-gray-200"
+                className="w-full text-left px-5 font-semibold shadow-sm border border-[#d6d3d1] dark:border-[#3a3633] py-2 dark:bg-[#3a3633] rounded hover:bg-[#e2e8f0] hover:text-[#3a3633]"
               >
                 {cls.name}
               </button>
@@ -215,8 +216,8 @@ import HelmetTitle from '../HelmetTitle';
                 onClick={() => setClassPage(i + 1)}
                 className={`px-3 py-1 rounded ${
                   classPage === i + 1
-                    ? 'bg-[#6366f1] text-white'
-                    : 'bg-gray-300'
+                    ? 'bg-[#3a3633] text-white'
+                    : 'border-[#3a3633] border'
                 }`}
               >
                 {i + 1}
@@ -226,6 +227,7 @@ import HelmetTitle from '../HelmetTitle';
         </div>
       </div>
     </div>
+     </main>
      </>
 
  

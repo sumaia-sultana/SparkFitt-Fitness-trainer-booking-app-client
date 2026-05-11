@@ -48,8 +48,8 @@ const Login = () => {
     return (
       <>
       <HelmetTitle title="Log in" />
-         <div className='flex justify-center items-center min-h-screen bg-white'>
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+         <div className='flex justify-center items-center min-h-screen  '>
+      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 dark:bg-[#3a3633] dark:text-[#e2e8f0]'>
          
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
@@ -127,11 +127,11 @@ const Login = () => {
 
           <p>Continue with Google</p>
         </div>
-        <p className='px-6 text-sm text-center text-gray-400'>
+        <p className='px-6 text-sm text-center dark:text-[#e2e8f0]'>
           Don&apos;t have an account yet?{' '}
           <Link
             to='/signup'
-            className='hover:underline hover:text-[#6366f1] text-gray-600'>
+            className='hover:underline hover:text-[#6366f1] dark:text-[#e2e8f0]'>
             Sign up
           </Link>
           .

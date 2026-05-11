@@ -55,7 +55,7 @@ const NewsLetter = () => {
     }
   };
     return (
-      <section className="shadow-2xl  rounded-3xl py-12 px-4">
+      <section className="shadow-2xl border dark:border-[#484441] rounded-3xl py-12 px-4">
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-2xl text-[#6366f1] font-bold mb-4">Spark Up Your Inbox — Subscribe & Stay with Us!</h2>
         <p className="mb-6 text-gray-600">Stay connected with the sustainable fitness tips, exclusive offers, and updates that will be delivered straight to your inbox.</p>

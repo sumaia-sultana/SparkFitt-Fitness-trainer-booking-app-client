@@ -34,7 +34,7 @@ const TrainerDetails = () => {
   });
   
 
-  // ✅ Fetch trainer
+  //  Fetch trainer
   const {
     data: trainer,
     isLoading: trainerLoading,
@@ -48,7 +48,7 @@ const TrainerDetails = () => {
     enabled: !!id,
   });
 
-  // ✅ Fetch all slots
+  //  Fetch all slots
   const {
     data: allSlots = [],
     isLoading: slotLoading,
@@ -74,13 +74,13 @@ const TrainerDetails = () => {
     }
   };
 
-  // ✅ Filter slots for current trainer
+  //  Filter slots for current trainer
 const trainerSlots = allSlots.filter(
   (slot) => trainer?.email === slot.trainerEmail && slot.available
 );
 
 
-  // ✅ Loading/Error State
+  //  Loading/Error State
   if (trainerLoading || slotLoading) {
     return (
       <div className="py-10 text-center">
@@ -97,7 +97,7 @@ const trainerSlots = allSlots.filter(
          <div>
       <div className="lg:flex mx-auto gap-3 px-10 py-5">
         {/* Left: Trainer Card */}
-        <div className="bg-white w-full lg:w-1/3 shadow-md rounded-lg p-6 mb-6 lg:mb-0">
+        <div className="  w-full lg:w-1/3 shadow-md rounded-lg p-6 mb-6 lg:mb-0">
           <img
             src={trainer.photo || 'https://via.placeholder.com/200'}
             alt={trainer.name}
@@ -105,12 +105,12 @@ const trainerSlots = allSlots.filter(
           />
           <div>
             <h2 className="text-3xl font-bold text-[#6366f1] mb-2">{trainer.name}</h2>
-            <p className="text-gray-600 mb-1"><strong>Email:</strong> {trainer.email}</p>
-            <p className="text-gray-600 mb-1"><strong>Role:</strong> {trainer.role}</p>
-            <p className="text-gray-600 mb-1"><strong>Experience:</strong> {trainer.experience}</p>
-            <p className="text-gray-600 mb-1"><strong>Skills:</strong> {trainer.skills}</p>
+            <p className="  mb-1"><strong>Email:</strong> {trainer.email}</p>
+            <p className="  mb-1"><strong>Role:</strong> {trainer.role}</p>
+            <p className="  mb-1"><strong>Experience:</strong> {trainer.experience}</p>
+            <p className="  mb-1"><strong>Skills:</strong> {trainer.skills}</p>
             {trainer.specialty && (
-              <p className="text-gray-600 mb-1"><strong>Specialty:</strong> {trainer.specialty}</p>
+              <p className="  mb-1"><strong>Specialty:</strong> {trainer.specialty}</p>
             )}
             {trainer.bio && (
               <p className="text-gray-700 mt-4">{trainer.bio}</p>
@@ -119,8 +119,8 @@ const trainerSlots = allSlots.filter(
         </div>
 
         {/* Right: Slots */}
-       <div className="overflow-x-auto">
-      <table className="min-w-full  border border-gray-300">
+       <div className="mx-auto my-10 py-5">
+      <table className="min-w-full border border-gray-300">
       <thead>
       <tr className="bg-[#6366f1]  ">
         <th className="py-2 px-2.5 w-32 border">Date</th>
@@ -135,7 +135,7 @@ const trainerSlots = allSlots.filter(
       </thead>
       <tbody>
       {trainerSlots.map(slot => (
-        <tr key={slot._id} className="hover:bg-gray-100">
+        <tr key={slot._id} className="hover:bg-[#f5f5f4] dark:hover:bg-[#3a3633]">
           <td className="py-2 px-2 border text-center">{slot.date}</td>
           <td className="py-2 px-2 border text-center">
             {convertTo12HourFormat(slot.startTime)} - {convertTo12HourFormat(slot.endTime)}

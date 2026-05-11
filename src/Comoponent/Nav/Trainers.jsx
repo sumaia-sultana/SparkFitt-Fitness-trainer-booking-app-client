@@ -58,9 +58,9 @@ const Trainers = () => {
 
 
     return (
-        <div className="mb-4">
+        <div className="mx-auto my-5 relative max-w-7xl py-5">
     {/*    */}
-  <div className='lg:flex md:flex px-5 py-5 mx-auto h-[600px] shadow-md rounded-lg overflow-hidden'>
+      <div className='lg:flex md:flex px-5 py-5 mx-auto h-[600px] shadow-md rounded-lg overflow-hidden'>
         {/* Left: Trainer List */}
       <div className="lg:w-1/3 md:1/3 light:bg-white overflow-y-auto ">
         <h2 className="text-2xl font-bold p-4 text-center bg-[#6366f1] text-white">Trainers</h2>
