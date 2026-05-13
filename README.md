@@ -141,4 +141,5 @@ SPARKFITT-FITNESS-TRAINER-BOOKING-APP-CLIENT/
 ##Set-up Project tech stach
 
 npm install
+
 npm run dev
