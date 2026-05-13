@@ -92,3 +92,49 @@ SparkFit is a full-featured fitness web application designed to connect users wi
 
 ## 📁 Folder Structure (Frontend)
 
+```
+SPARKFITT-FITNESS-TRAINER-BOOKING-APP-CLIENT/
+│
+├── public/
+│
+├── src/
+│   │
+│   ├── Comoponent/
+│   │   │
+│   │   ├── api/
+│   │   ├── Dashboard/
+│   │   │   │
+│   │   │   ├── pages/
+│   │   │   │   ├── admin/
+│   │   │   │   ├── common/
+│   │   │   │   ├── member/
+│   │   │   │   └── trainer/
+│   │   │   │
+│   │   │   ├── payment/
+│   │   │   ├── Sidebar/
+│   │   │   └── DashboardNav.jsx
+│   │   │
+│   │   ├── hooks/
+│   │   ├── Nav/
+│   │   ├── Shared/
+│   │   ├── Footer.jsx
+│   │   ├── HelmetTitle.jsx
+│   │   ├── Login.jsx
+│   │   ├── Navbarr.jsx
+│   │   └── Signup.jsx
+│   │
+│   ├── Firebase/
+│   │   └── firebase.init.js
+│   │
+│   ├── Layout/
+│   ├── Pages/
+│   ├── Provider/
+│   ├── Routes/
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   └── index.css
+│
+└── main
+```
+
