@@ -138,3 +138,7 @@ SPARKFITT-FITNESS-TRAINER-BOOKING-APP-CLIENT/
 └── main
 ```
 
+##Set-up Project tech stach
+
+npm install
+npm run dev
